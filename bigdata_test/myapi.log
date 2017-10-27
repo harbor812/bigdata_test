@@ -1,5 +1,4 @@
-Tue, 26 Sep 2017 20:01:47 _internal.py[line:87] WARNING  * Debugger is active!
-Tue, 26 Sep 2017 20:01:47 _internal.py[line:87] INFO  * Debugger PIN: 567-138-730
-Tue, 26 Sep 2017 20:01:47 _internal.py[line:87] INFO  * Running on http://0.0.0.0:6002/ (Press CTRL+C to quit)
-Tue, 26 Sep 2017 20:01:57 _internal.py[line:87] INFO 192.168.130.221 - - [26/Sep/2017 20:01:57] "POST /data HTTP/1.1" 200 -
-Wed, 27 Sep 2017 11:24:49 _internal.py[line:87] INFO  * Detected change in 'D:\\git\\bigdata_test\\bigdata_test\\db_mysql.py', reloading
+Fri, 27 Oct 2017 11:50:53 _internal.py[line:87] WARNING  * Debugger is active!
+Fri, 27 Oct 2017 11:50:53 _internal.py[line:87] INFO  * Debugger PIN: 567-138-730
+Fri, 27 Oct 2017 11:50:53 _internal.py[line:87] INFO  * Running on http://0.0.0.0:6003/ (Press CTRL+C to quit)
+Fri, 27 Oct 2017 11:51:27 _internal.py[line:87] INFO  * Detected change in 'D:\\git\\bigdata_test\\bigdata_test\\dbFri, 27 Oct 2017 11:51:27 _internal.py[line:87] INFO  * Restarting with stat

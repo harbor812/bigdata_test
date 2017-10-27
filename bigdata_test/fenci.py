@@ -5,38 +5,14 @@ Created on Fri Sep 29 12:13:58 2017
 @author: Brianzhu
 """
 
-import jieba,nltk,json,time
-import codecs   
-import db_mysql  
-
-
-
-def cut_sentence(sentence): 
-    stopwords = []  
-    delstopwords = {}
-    strs=jieba.cut(sentence)
-    fd=nltk.FreqDist(strs)
-    keys=fd.keys()
-    item=fd.iteritems()
-    dicts=dict(item)
-    st = codecs.open('./stopwords.txt', 'rb',encoding='utf-8')  
-    for line in st:  
-        line = line.strip() 
-        stopwords.append(line)
-
-    #过滤停用词
-    for word in keys:  
-        word = word.strip()
-        if word not in stopwords:  
-#            if word >= u'\u4e00' and word <= u'\u9fa5':#判断是否是汉字
-                if word in dicts.keys():
-                    delstopwords[word]=dicts[word]
-
-    return delstopwords
-
+import json,time  
+import db_mysql
+import datetime
+import cut_sentence as cs
 
 
 if __name__ == '__main__':
+#     starttime=datetime.datetime.now()
      db=db_mysql.dbmysql()
      #获取所有commintcode 信息
      commintcode=db.bug_sel_commitcode()
@@ -51,7 +27,7 @@ if __name__ == '__main__':
              #bugname 不为空 做词频统计和排序
              if res != ():
                  strs=str(res).decode("unicode-escape")
-                 dicts=cut_sentence(strs)
+                 dicts=cs.cut_sentence(strs)
                  sort_dict=sorted(dicts.iteritems(),key=lambda d:d[1],reverse=True)
                  key_dict=json.dumps(sort_dict,encoding="utf-8",ensure_ascii=False)
                  key_dict=key_dict.replace("\",",":")
@@ -68,3 +44,6 @@ if __name__ == '__main__':
                         bugid=str(bugid).replace("(","").replace(",)","").replace("u","").replace("'","").replace(")","")
                         db.keyword_save(cc[0],cc[2],kw,dt[1],date,bugid)
                         db.keyword_del()
+#     endtime=datetime.datetime.now()
+#     rtime=(endtime - starttime).seconds 
+#     print rtime

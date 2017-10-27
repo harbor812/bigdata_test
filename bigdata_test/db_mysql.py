@@ -7,6 +7,10 @@ Created on Sun Sep 17 13:50:28 2017
 import MySQLdb as mdb
 
 class dbmysql(object):
+#    localhost='127.0.0.1'
+#    user='root'
+#    passwd='rp1qaz@WSX'
+#    databases='test_bigdata'
     localhost='localhost'
     user='root'
     passwd='zwg123456'
@@ -66,23 +70,16 @@ class dbmysql(object):
         results = cursor.fetchall()
         return results
         cursor.close()
-        conn.close()        
-    def keyword_save(self,commitcode,object_id,keyword,count_num,create_date,bug_id):
-        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
-        cursor=conn.cursor()          #定义连接对象
-        sql = "INSERT into keywords (commitcode,object_id,keyword,count_num,create_date,bug_id)VALUES (%s,%s,%s,%s,%s,%s)"
-        cursor.execute(sql,(commitcode,object_id,keyword,count_num,create_date,bug_id))
-        conn.commit()
-        cursor.close()
         conn.close()
-    def keyword_del(self):
+    def bug_sel_subtype(self,date):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "delete from keywords where keyword =''"
+        sql = "select DISTINCT sub_type from bug where date >='"+date+"' and bug_status='完成'"
         cursor.execute(sql)
-        conn.commit()
+        results = cursor.fetchall()
+        return results
         cursor.close()
-        conn.close()
+        conn.close() 
     def bug_sel_bugid(self,object_id,date,keyword):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
@@ -91,9 +88,35 @@ class dbmysql(object):
         results = cursor.fetchall()
         return results
         cursor.close()
-        conn.close()  
-#res=dbmysql().bug_sel_bugid("1","2017-09-13","接口")
+        conn.close()
+    def bug_keyword_save(self,date,object_id,keyword,count_num,create_date,bug_id):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "INSERT into day_keywords (day,object_id,keyword,count_num,create_date,bug_id)VALUES (%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(date,object_id,keyword,count_num,create_date,bug_id))
+        conn.commit()
+        cursor.close()
+        conn.close()
+    def keyword_del(self):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "delete from keywords where keyword ='' or bug_id=''"
+        cursor.execute(sql)
+        conn.commit()
+        cursor.close()
+        conn.close()
+    def bug_keyword_del(self):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "delete from day_keywords where keyword =''or bug_id=''"
+        cursor.execute(sql)
+        conn.commit()
+        cursor.close()
+        conn.close()
+  
+        
+#res=dbmysql().bug_sel_subtype("2017-09-13")
 #if res != ():
-#    print res
+#    print res[2]
 
 

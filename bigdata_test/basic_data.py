@@ -23,7 +23,7 @@ def basic_project(name):
             return 7
         if "搜索引擎" in name:
             return 8
-        if "实时抓取视频切割数据" or "实时抓取"in name:
+        if "实时抓取视频切割数据" in name or "实时抓取"in name:
             return 9
         if "弹幕游戏" in name:
             return 10
@@ -31,6 +31,7 @@ def basic_project(name):
             return 11 
         else:
             return 99
+
 
 
 
