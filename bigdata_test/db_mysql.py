@@ -16,6 +16,7 @@ class dbmysql(object):
     passwd='zwg123456'
     databases='test_bigdata'
     def save(self,objectname,date,change,name,commitcode):
+        print objectname,name,change,date,commitcode
     #    conn = mdb.connect('localhost','root','zwg123456','test_bigdata')
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
@@ -44,10 +45,10 @@ class dbmysql(object):
         return results
         cursor.close()
         conn.close()
-    def bug_sel_commitcode(self):
+    def bug_sel_commitcode(self,date):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "select DISTINCT commitcode,date,object_id from jenkins_source"
+        sql = "select commitcode,change_name,object_id,change_source,date from jenkins_source where date >='"+date+"'"
         cursor.execute(sql)
         results = cursor.fetchall()
         return results
@@ -62,11 +63,11 @@ class dbmysql(object):
         return results
         cursor.close()
         conn.close() 
-    def bug_sel_bugname(self,object_id,date):
+    def bug_sel_bugname(self,object_id,startdate,enddate):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "select bug_name from bug where sub_type=%s and date >=%s and bug_status='完成'"
-        cursor.execute(sql,(object_id,date))
+        sql = "select bug_name from bug where sub_type=%s and date >=%s and date <=%s and bug_status='完成'"
+        cursor.execute(sql,(object_id,startdate,enddate))
         results = cursor.fetchall()
         return results
         cursor.close()
@@ -80,13 +81,21 @@ class dbmysql(object):
         return results
         cursor.close()
         conn.close() 
-    def bug_sel_bugid(self,object_id,date,keyword):
+    def bug_sel_bugid(self,object_id,startdate,enddate,keyword):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "select bug_id from bug where sub_type=%s and date >=%s and bug_status='完成' and bug_name like '%%"+keyword+"%%'"
-        cursor.execute(sql,(object_id,date))
+        sql = "select bug_id from bug where sub_type=%s and date >=%s and date <=%s and bug_status='完成' and bug_name like '%%"+keyword+"%%'"
+        cursor.execute(sql,(object_id,startdate,enddate))
         results = cursor.fetchall()
         return results
+        cursor.close()
+        conn.close()
+    def keyword_save(self,commitcode,object_id,keyword,count_num,startdate,enddate,bug_id):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "INSERT into keywords (commitcode,object_id,keyword,count_num,startdate,enddate,bug_id)VALUES (%s,%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(commitcode,object_id,keyword,count_num,startdate,enddate,bug_id))
+        conn.commit()
         cursor.close()
         conn.close()
     def bug_keyword_save(self,date,object_id,keyword,count_num,create_date,bug_id):
@@ -113,8 +122,33 @@ class dbmysql(object):
         conn.commit()
         cursor.close()
         conn.close()
-  
-        
+    def testcase_sel(self,caseid,date):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select count(*) from test_case where case_id=%s and creation_date=%s"
+        cursor.execute(sql,(caseid,date))
+        results = cursor.fetchone()
+        return results
+        cursor.close()
+        conn.close()  
+    def testcase_save(self,case_id,case_name,create_name,modification_name,creation_date,updater_date,typename):
+        if modification_name =="":
+            modification_name="无"
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "INSERT into test_case (case_id,case_name,create_name,modification_name,creation_date,updater_date,type)VALUES (%s,%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(case_id,case_name,create_name,modification_name,creation_date,updater_date,typename))
+        conn.commit()
+        cursor.close()
+        conn.close() 
+    def testcase_update(self,case_id,case_name,modification_name,updater_date):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "update test_case set case_name=%s,modification_name=%s,updater_date=%s where case_id=%s"
+        cursor.execute(sql,(case_name,modification_name,updater_date,case_id))
+        conn.commit()
+        cursor.close()
+        conn.close() 
 #res=dbmysql().bug_sel_subtype("2017-09-13")
 #if res != ():
 #    print res[2]

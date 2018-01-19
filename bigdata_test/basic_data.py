@@ -29,6 +29,8 @@ def basic_project(name):
             return 10
         if "系统监控" in name:
             return 11 
+        if "录制工具" in name:
+            return 12 
         else:
             return 99
 

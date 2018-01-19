@@ -19,7 +19,7 @@ class dbmysql(object):
     def fx_sel_bug(self,date):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "select bug_id,bug_status,sub_type from bug where date >='"+date+"'"
+        sql = "select bug_id,bug_status,sub_type,date from bug where date >='"+date+"'"
         cursor.execute(sql)
         results = cursor.fetchall()
         return results
@@ -34,13 +34,22 @@ class dbmysql(object):
         return results
         cursor.close()
         conn.close() 
-    def fx_sel_bug_count(self,date,date1,sub_type):
+    def fx_changename_save(self,change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date,add_count,del_count,bug_new_id,bug_fix_id,bug_close_id):
+        #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "select count(*) from bug where date >='"+date+"' and date < '"+date1+"' and bug_status='完成' and sub_type = '"+sub_type+"'"
-        cursor.execute(sql)
-        results = cursor.fetchone()
-        return results
+        sql = "INSERT into changename_statistics (change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date,add_count,del_count,bug_new_id,bug_fix_id,bug_close_id)VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date,add_count,del_count,bug_new_id,bug_fix_id,bug_close_id))
+        conn.commit()
+        cursor.close()
+        conn.close()
+    def day_statistics_save(self,date,object_id,commit_count,change_count,change_totlecount,add_count,del_count,bug_new_count,bug_fix_count,bug_close_count):
+        #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "INSERT into day_statistics (date,object_id,commit_count,change_count,change_totlecount,add_count,del_count,bug_new_count,bug_fix_count,bug_close_count)VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(date,object_id,commit_count,change_count,change_totlecount,add_count,del_count,bug_new_count,bug_fix_count,bug_close_count))
+        conn.commit()
         cursor.close()
         conn.close()
 #res=dbmysql().bug_sel_bugid("1","2017-09-13","接口")
