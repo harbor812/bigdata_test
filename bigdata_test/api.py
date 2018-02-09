@@ -8,6 +8,7 @@ Created on Sun Sep 17 13:51:29 2017
 from flask import Flask,request,json
 import db_mysql
 import logging
+import basic_data
 
 logging.basicConfig(level=logging.DEBUG,
                 format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
@@ -31,6 +32,7 @@ def index():
     try:
         if request.method == 'POST':
             a = request.get_data()
+#            print a
             dict1 = json.loads(a)
             dic=list(dict1.keys())
  #           logging.info(dic) 
@@ -56,7 +58,16 @@ def index():
                     name.append(dic[j])
                     #print date,change[t],name[t]
                     change1=str(change[t])
-                    db.save(objectid,date[0],change1,name[t],commitcode)
+                    name1=str(name[t])
+                    db.save(objectid,date[0],change1,name1,commitcode)
+#                    print "#################"
+#                    print objectid[0],name[t]
+                    changename_level_cn=db.changename_level_sel(objectid,name1)
+#                    print "changename_level_cn",int(changename_level_cn[0])
+                    if int(changename_level_cn[0]) > 0:
+                       objectid1=basic_data.basic_project1(objectid[0])
+                       message="近90天bug严重的程序：子项目名称："+objectid1+",程序名："+name1+"， 有更新"
+                       logging.info(message)
                     t=t+1
             return json.dumps("ok") 
         else:
@@ -64,8 +75,8 @@ def index():
     except :
         logging.error("error message") 
  
-        
+     
 if __name__ == '__main__':
     app.run(host = '0.0.0.0',
-        port = 6003,  
+        port = 6002,  
         debug = True )

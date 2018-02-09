@@ -114,6 +114,7 @@ def day_changename(date):
      #   print fx_jk[i][1],type(fx_jk[i][1].encode('utf-8'))
         ob_data.append(fx_jk[i][1].encode('utf-8'))
     ob_data=pd.DataFrame({'ob_data':ob_data})
+    print ob_data
     ob_data_distinct = ob_data.drop_duplicates() 
     
     cn1=len(ob_data_distinct)
@@ -167,6 +168,9 @@ def day_changename(date):
               enddate=datetime
           startdate=str(j_date[x])
           ob_id=type_data[x]
+          print '############################################'
+          print startdate,enddate,ob_id
+
           #选取和统计代码修改数
           cs_data1=cs_data[(cs_data['j_date'] >=startdate) & (cs_data['j_date'] < enddate) & (cs_data['type_data'] == ob_id)]
           cs_data_list=cs_data1['cs_data'].tolist()
@@ -205,53 +209,240 @@ def day_changename(date):
                   
           db.fx_changename_save(ob_data,ob_id,startdate,enddate,bug_new,bug_fix,bug_close,date,add_count,del_count,bug_new_id,bug_fix_id,bug_close_id)
 
-#              print ob_data,ob_id,startdate,enddate,bug_new,bug_fix,bug_close,date,add_count,del_count,bug_close_id,bug_new_id,bug_fix_id
-#def day_bug_cut(date):
-#     db=db_mysql.dbmysql()
-#     #获取所有commintcode 信息
-#     #date=time.strftime('%Y-%m-%d',time.localtime(time.time()))
-#     #print date
-#     subtype=db.bug_sel_subtype(date)
-#     for j in range(len(subtype)):
-#         #获取commitcode 对应的bugname
-#         subtype1=str(subtype[j]).replace("(","").replace(",)","").replace("u","").replace("'","").replace(")","")
-#
-#         res=db.bug_sel_bugname(subtype1,date)
-#         #bugname 不为空 做词频统计和排序
-#         if res != ():
-#              strs=str(res).decode("unicode-escape")
-#              
-#              dicts=cs.cut_sentence(strs)
-#              sort_dict=sorted(dicts.iteritems(),key=lambda d:d[1],reverse=True)
-#              key_dict=json.dumps(sort_dict,encoding="utf-8",ensure_ascii=False)
-#              key_dict=key_dict.replace("\",",":")
-#              dd=key_dict.replace("[","").replace("]","").replace("\"","")
-#              dd=dd.split(",")
-#              #合并有效数据，插入数据库
-#              for i in range(len(dd)):
-#                  dt=dd[i].split(":")
-#                  date1=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
-#                  if dt[0]:
-#                     #转译词频词并且去除空格
-#                     kw=dt[0].encode('utf-8').strip() 
-#                     bugid=db.bug_sel_bugid(subtype1,date,kw)
-#                     bugid=str(bugid).replace("(","").replace(",)","").replace("u","").replace("'","").replace(")","")
-#                     db.bug_keyword_save(date,subtype1,kw,dt[1],date1,bugid)
-#                     db.bug_keyword_del()
-#                     
+def day_changename_bug_probability(date):
+    db=fenxi_mysql.dbmysql()
+    fx_change_name=[]
+    fx_change_name1=[]
+    fx_object_id=[]
+    fx_object_id1=[]
+#    fx_starttime=[]
+    fx_new_bug_count=[]
+    db.fx_data_del("changename_bug_probability")
+    fx_cns=db.fx_changename_statistics_sel()
+#    print  "fx_cns:",fx_cns
+    cn_fx_cn=len(fx_cns)
+    #获取change_name+object_id，并按照change_name+object_id去重
+    for i in range(cn_fx_cn):
+     #   print fx_jk[i][1],type(fx_jk[i][1].encode('utf-8'))
+        fx_change_name1.append(fx_cns[i][0].encode('utf-8'))
+        fx_object_id1.append(fx_cns[i][1])
+    fx_change_name1=pd.DataFrame({'fx_object_id1':fx_object_id1,'fx_change_name1':fx_change_name1})
+    fx_change_name1_distinct = fx_change_name1.drop_duplicates()  
+#    print fx_change_name1_distinct
+    cn1=len(fx_change_name1_distinct)
+    print fx_change_name1_distinct  
+    #获取change_name+object_id+new_bug_count
+    for x in range(cn_fx_cn):
+          fx_change_name.append(fx_cns[x][0].encode('utf-8'))
+          fx_object_id.append(fx_cns[x][1])
+#          fx_starttime.append(str(fx_cns[x][2]))
+          fx_new_bug_count.append(fx_cns[x][3]) 
+    #数组保存成DataFrame
+    cns_data=pd.DataFrame({'fx_change_name':fx_change_name,'fx_object_id':fx_object_id,'fx_new_bug_count':fx_new_bug_count})
+
+
+    for i in range(cn1):
+#        print '##########################################'
+        changename_data=fx_change_name1_distinct.iloc[i,0]
+        object_id=fx_change_name1_distinct.iloc[i,1]
+#        print changename_data,object_id
+#        print '##########################################'
+        changename_data1=cns_data[(cns_data['fx_change_name'] == changename_data) &(cns_data['fx_object_id'] == object_id)]
+#        print changename_data1
+        sum_bug=changename_data1['fx_new_bug_count'].sum()
+        count_changename=changename_data1['fx_change_name'].count()
+#        print "bug数，提交次数：",sum_bug,count_changename
+        bug_probability=format(float(sum_bug)/float(count_changename)* 100,'.2f')
+#        print "出现bug概率：",bug_probability
+#        print "要插入数据：",changename_data,object_id,sum_bug,count_changename,bug_probability,date
+        db.fx_changename_bug_probability_save(changename_data,object_id,sum_bug,count_changename,bug_probability,date)
+        
+def day_changename_topkeyword(date):
+    db=fenxi_mysql.dbmysql()
+    fx_change_name=[]
+    fx_change_name1=[]
+    fx_object_id=[]
+    fx_object_id1=[]
+    fx_keyword=[]
+    fx_keywrod_count=[]
+    db.fx_data_del("changename_topkeyword")
+    db.fx_data_del("keywords where keyword = '后台' and object_id=2")
+    db.fx_data_del("day_keywords where keyword = '后台' and object_id=2")
+    db.fx_data_del("keywords where keyword = '泡面番' and object_id=2")
+    db.fx_data_del("day_keywords where keyword = '泡面番' and object_id=2")
+    db.fx_data_del("keywords where keyword = '数据' and object_id=6")
+    db.fx_data_del("day_keywords where keyword = '数据' and object_id=6")
+    fx_cns=db.fx_changename_Topkeyword_sel()
+#    print  "fx_cns:",fx_cns
+    cn_fx_cn=len(fx_cns)
+    #获取change_name+object_id，并按照change_name+object_id去重
+    for i in range(cn_fx_cn):
+     #   print fx_jk[i][1],type(fx_jk[i][1].encode('utf-8'))
+        fx_change_name1.append(fx_cns[i][0].encode('utf-8'))
+        fx_object_id1.append(fx_cns[i][1])
+    fx_change_name1=pd.DataFrame({'fx_object_id1':fx_object_id1,'fx_change_name1':fx_change_name1})
+    fx_change_name1_distinct = fx_change_name1.drop_duplicates()  
+#    print fx_change_name1_distinct
+    cn1=len(fx_change_name1_distinct)
+#    print fx_change_name1_distinct     
+    #获取change_name+object_id+new_bug_count
+    for x in range(cn_fx_cn):
+          fx_change_name.append(fx_cns[x][0].encode('utf-8'))
+          fx_object_id.append(fx_cns[x][1])
+          fx_keyword.append(fx_cns[x][2].encode('utf-8'))
+          fx_keywrod_count.append(fx_cns[x][3]) 
+    #数组保存成DataFrame
+    cns_data=pd.DataFrame({'fx_change_name':fx_change_name,'fx_object_id':fx_object_id,'fx_keyword':fx_keyword,'fx_keywrod_count':fx_keywrod_count})
+
+    for i in range(cn1):
+#        print '##########################################'
+        changename_data=fx_change_name1_distinct.iloc[i,0]
+        object_id=fx_change_name1_distinct.iloc[i,1]
+#        print changename_data,object_id
+
+        changename_data1=cns_data[(cns_data['fx_change_name'] == changename_data) &(cns_data['fx_object_id'] == object_id)]
+#        print changename_data1
+#        print '##########################################'
+        #按照fx_keywrod_count 倒序
+        key_order=changename_data1.sort_values(by='fx_keywrod_count',axis = 0,ascending = False)
+        #取第一行数据
+        changename_1=key_order.iloc[0,0]
+        keyword_1=key_order.iloc[0,1]
+        keywrod_count_1=key_order.iloc[0,2]
+        object_id_1=key_order.iloc[0,3]
+#        print key_order
+#        print '##########################################'
+#        print changename_1,object_id_1,keyword_1,keywrod_count_1,date
+        db.fx_changename_Topkeyword_save(changename_1,object_id_1,keyword_1,keywrod_count_1,date)
+ 
+def day_changename_bug_level(date):
+    db=fenxi_mysql.dbmysql()
+    fx_change_name=[]
+    fx_change_name1=[]
+    fx_object_id=[]
+    fx_object_id1=[]
+    fx_new_bug_count=[]
+    fx_add_count=[]
+    fx_del_count=[]
+    add_count=0
+    del_count=0
+    db.fx_data_del("changename_level")
+    fx_cns=db.fx_changename_statistics_sel()
+#    print  "fx_cns:",fx_cns
+    cn_fx_cn=len(fx_cns)
+    #获取change_name+object_id，并按照change_name+object_id去重
+    for i in range(cn_fx_cn):
+     #   print fx_jk[i][1],type(fx_jk[i][1].encode('utf-8'))
+        fx_change_name1.append(fx_cns[i][0].encode('utf-8'))
+        fx_object_id1.append(fx_cns[i][1])
+    fx_change_name1=pd.DataFrame({'fx_object_id1':fx_object_id1,'fx_change_name1':fx_change_name1})
+    fx_change_name1_distinct = fx_change_name1.drop_duplicates()  
+#    print fx_change_name1_distinct
+    cn1=len(fx_change_name1_distinct)
+#    print fx_change_name1_distinct     
+    #获取change_name+object_id+new_bug_count
+    for x in range(cn_fx_cn):
+          fx_change_name.append(fx_cns[x][0].encode('utf-8'))
+          fx_object_id.append(fx_cns[x][1])
+          fx_new_bug_count.append(fx_cns[x][3])
+          fx_add_count.append(fx_cns[x][4]) 
+          fx_del_count.append(fx_cns[x][5]) 
+
+    #数组保存成DataFrame
+    cns_data=pd.DataFrame({'fx_change_name':fx_change_name,'fx_object_id':fx_object_id,'fx_new_bug_count':fx_new_bug_count,'fx_add_count':fx_add_count,'fx_del_count':fx_del_count})
+
+    for i in range(cn1):
+#        print '##########################################'
+        changename_data=fx_change_name1_distinct.iloc[i,0]
+        object_id=fx_change_name1_distinct.iloc[i,1]
+#        print changename_data,object_id
+        changename_data1=cns_data[(cns_data['fx_change_name'] == changename_data) &(cns_data['fx_object_id'] == object_id)]
+        add_count=int(changename_data1['fx_add_count'].sum())
+        del_count=int(changename_data1['fx_del_count'].sum())
+        new_bug_count=int(changename_data1['fx_new_bug_count'].sum())
+#        print changename_data,object_id,add_count,del_count,new_bug_count
+#        print '##########################################'
+#        print add_count,del_count
+        result_count=add_count-del_count
+#        print result_count,new_bug_count
+        if changename_data == 'file:/VideoServer/src/main/java/xiaohulu/dao/LiveShowSqlDao.java':
+           print  changename_data1['fx_add_count']
+           print '#####################################'
+           print changename_data1['fx_add_count'].sum()
+           print '####################################'
+           print add_count,del_count,result_count
+           print '####################################'
+        if result_count == 0:
+            if new_bug_count >= 0 and new_bug_count <= 5:
+#                print changename_data,object_id,add_count,del_count,result_count,new_bug_count,"轻1",date
+                db.fx_changename_level_save(changename_data,object_id,add_count,del_count,result_count,new_bug_count,"轻",date)
+            if new_bug_count >5 and new_bug_count <= 10:
+#                print changename_data,object_id,add_count,del_count,result_count,new_bug_count,"中1",date
+                db.fx_changename_level_save(changename_data,object_id,add_count,del_count,result_count,new_bug_count,"中",date)                
+            if new_bug_count >10:
+#                print changename_data,object_id,add_count,del_count,result_count,new_bug_count,"重1",date
+                db.fx_changename_level_save(changename_data,object_id,add_count,del_count,result_count,new_bug_count,"重",date)                
+                
+#            break
+        if (result_count > 0 and result_count <= 20) or (result_count < 0 and result_count >= -20):
+            if new_bug_count >= 0 and new_bug_count <= 5:
+#                print changename_data,object_id,add_count,del_count,result_count,new_bug_count,"轻2",date
+                db.fx_changename_level_save(changename_data,object_id,add_count,del_count,result_count,new_bug_count,"轻",date)
+            if new_bug_count >5 and new_bug_count <= 10:
+#                print changename_data,object_id,add_count,del_count,result_count,new_bug_count,"中2",date
+                db.fx_changename_level_save(changename_data,object_id,add_count,del_count,result_count,new_bug_count,"中",date)                                
+            if new_bug_count >10:
+#                print changename_data,object_id,add_count,del_count,result_count,new_bug_count,"重2",date
+                db.fx_changename_level_save(changename_data,object_id,add_count,del_count,result_count,new_bug_count,"重",date)                
+                
+#            break
+        if (result_count > 20 and result_count <= 100) or (result_count < -20 and result_count >= -100):
+            if new_bug_count >= 0 and new_bug_count <= 5:
+#                print changename_data,object_id,add_count,del_count,result_count,new_bug_count,"轻3",date
+                db.fx_changename_level_save(changename_data,object_id,add_count,del_count,result_count,new_bug_count,"轻",date)                
+            if new_bug_count >5 and new_bug_count <= 15:
+#                print changename_data,object_id,add_count,del_count,result_count,new_bug_count,"中3",date
+                db.fx_changename_level_save(changename_data,object_id,add_count,del_count,result_count,new_bug_count,"中",date)                                
+            if new_bug_count >15:
+#                print changename_data,object_id,add_count,del_count,result_count,new_bug_count,"重3",date
+                db.fx_changename_level_save(changename_data,object_id,add_count,del_count,result_count,new_bug_count,"重",date)                                
+#            break
+        if  result_count > 100  or result_count < -100:
+            if new_bug_count >= 0 and new_bug_count <= 5:
+#                print changename_data,object_id,add_count,del_count,result_count,new_bug_count,"轻4",date
+                db.fx_changename_level_save(changename_data,object_id,add_count,del_count,result_count,new_bug_count,"轻",date)                
+            if new_bug_count >5 and new_bug_count <= 20:
+#                print changename_data,object_id,add_count,del_count,result_count,new_bug_count,"中4",date
+                db.fx_changename_level_save(changename_data,object_id,add_count,del_count,result_count,new_bug_count,"中",date)                                
+            if new_bug_count >20:
+#                print changename_data,object_id,add_count,del_count,result_count,new_bug_count,"重4",date
+                db.fx_changename_level_save(changename_data,object_id,add_count,del_count,result_count,new_bug_count,"重",date)                
+                
+#            break
+                     
 if __name__ == '__main__':
    starttime=datetime.datetime.now()
     #
-   date = datetime.date.today()
-   date = str(date)
-    #print date
-   #date='2017-11-22'
-   print "------开始时间--------------",starttime,"---------------------------------"
-#   day_commitcode(date)
-#   day_changename(date)
-#    day_bug_cut(date)
+#   date = datetime.date.today()
+#   date = str(date)+' 23:00:00'
+#   print date
+   date='2017-09-27'
+   print "---day_commitcode---开始时间--------------",starttime,"---------------------------------"
+   day_commitcode(date)
+   print "----day_changename--开始时间--------------",starttime,"---------------------------------"
+   day_changename(date)
+   print "---day_changename_bug_probability---开始时间--------------",starttime,"---------------------------------"
+   day_changename_bug_probability(date)
+   print "--day_changename_topkeyword----开始时间--------------",starttime,"---------------------------------"
+   day_changename_topkeyword(date)
+   print "--day_changename_bug_level----开始时间--------------",starttime,"---------------------------------"
+   day_changename_bug_level(date)
    endtime=datetime.datetime.now()
-   rtime=(endtime - starttime).seconds
-   print "------结束时间-------------",endtime,"------------------------------------"
-   print "------运行耗时-------------",rtime,"----------------------------------------"
+#   endtime=datetime.datetime.strptime(date, '%Y-%m-%d %H:%M:%S')
+   print endtime
+#   rtime=(endtime - starttime).seconds
+   if starttime > endtime:
+       rtime=endtime - starttime
+       print "------结束时间-------------",endtime,"------------------------------------"
+       print "------运行耗时-------------",rtime,"----------------------------------------"
     #:print rtime 

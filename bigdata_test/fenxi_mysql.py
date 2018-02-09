@@ -52,6 +52,64 @@ class dbmysql(object):
         conn.commit()
         cursor.close()
         conn.close()
+    def fx_changename_statistics_sel(self):
+        #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select change_name,object_id,starttime,new_bug_count,add_count,del_count from changename_statistics  where DATE_SUB(CURDATE(), INTERVAL 90 DAY) <=date(starttime) and  change_name not like '%.css'"
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        return results
+        cursor.close()
+        conn.close()
+    def fx_changename_bug_probability_save(self,change_name,object_id,sum_bug,count_changename,bug_probability,create_date):
+        #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "INSERT into changename_bug_probability (change_name,object_id,sum_bug,count_changename,bug_probability,create_date)VALUES (%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(change_name,object_id,sum_bug,count_changename,bug_probability,create_date))
+        conn.commit()
+        cursor.close()
+        conn.close()
+    def fx_changename_Topkeyword_sel(self):
+        #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = """select js.change_name,kws.object_id,kws.keyword,sum(kws.count_num)  from keywords kws,jenkins_source js 
+                where kws.COMMITcode=js.COMMITcode and  kws.object_id=js.object_id and  DATE_SUB(CURDATE(), INTERVAL 90 DAY) <=date(kws.startdate)
+                GROUP BY js.change_name,kws.object_id,kws.keyword """
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        return results
+        cursor.close()
+        conn.close()
+    def fx_changename_Topkeyword_save(self,change_name,object_id,keyword,keyword_count,create_date):
+        #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "INSERT into changename_topkeyword (change_name,object_id,keyword,keyword_count,create_date)VALUES (%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(change_name,object_id,keyword,keyword_count,create_date))
+        conn.commit()
+        cursor.close()
+        conn.close()
+    def fx_data_del(self,data):
+        #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "delete from "+data+""
+        cursor.execute(sql)
+        conn.commit()
+        cursor.close()
+        conn.close()
+    def fx_changename_level_save(self,change_name,object_id,add_count,del_count,result_count,bug_count,level_name,create_date):
+        #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "INSERT into changename_level (change_name,object_id,add_count,del_count,result_count,bug_count,level_name,create_date)VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(change_name,object_id,add_count,del_count,result_count,bug_count,level_name,create_date))
+        conn.commit()
+        cursor.close()
+        conn.close()
 #res=dbmysql().bug_sel_bugid("1","2017-09-13","接口")
 #if res != ():
 #    print res

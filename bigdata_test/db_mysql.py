@@ -16,7 +16,7 @@ class dbmysql(object):
     passwd='zwg123456'
     databases='test_bigdata'
     def save(self,objectname,date,change,name,commitcode):
-        print objectname,name,change,date,commitcode
+#        print objectname,name,change,date,commitcode
     #    conn = mdb.connect('localhost','root','zwg123456','test_bigdata')
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
@@ -72,6 +72,15 @@ class dbmysql(object):
         return results
         cursor.close()
         conn.close()
+    def bug_sel_bugname_daykeywrods(self,object_id,date):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select bug_name from bug where sub_type=%s and date >=%s and bug_status='完成'"
+        cursor.execute(sql,(object_id,date))
+        results = cursor.fetchall()
+        return results
+        cursor.close()
+        conn.close()
     def bug_sel_subtype(self,date):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
@@ -86,6 +95,15 @@ class dbmysql(object):
         cursor=conn.cursor()          #定义连接对象
         sql = "select bug_id from bug where sub_type=%s and date >=%s and date <=%s and bug_status='完成' and bug_name like '%%"+keyword+"%%'"
         cursor.execute(sql,(object_id,startdate,enddate))
+        results = cursor.fetchall()
+        return results
+        cursor.close()
+        conn.close()
+    def bug_sel_bugid_daykeyword(self,object_id,date,keyword):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select bug_id from bug where sub_type=%s and date >=%s and bug_status='完成' and bug_name like '%%"+keyword+"%%'"
+        cursor.execute(sql,(object_id,date))
         results = cursor.fetchall()
         return results
         cursor.close()
@@ -148,7 +166,16 @@ class dbmysql(object):
         cursor.execute(sql,(case_name,modification_name,updater_date,case_id))
         conn.commit()
         cursor.close()
-        conn.close() 
+        conn.close()
+    def changename_level_sel(self,objectid,change_name):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select count(*) from changename_level where object_id=%s and change_name=%s and level_name='轻'"
+        cursor.execute(sql,(objectid,change_name))
+        results = cursor.fetchone()
+        return results
+        cursor.close()
+        conn.close()
 #res=dbmysql().bug_sel_subtype("2017-09-13")
 #if res != ():
 #    print res[2]

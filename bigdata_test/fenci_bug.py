@@ -8,7 +8,7 @@ Created on Thu Oct 26 19:03:18 2017
 
 import json 
 import db_mysql
-import datetime
+import datetime,time
 import cut_sentence as cs
 
 
@@ -27,7 +27,7 @@ if __name__ == '__main__':
      for i in range(subtype_cn):
          #获取commitcode 对应的bugname
 
-         res=db.bug_sel_bugname(subtype[i],date)
+         res=db.bug_sel_bugname_daykeywrods(subtype[i],date)
          #bugname 不为空 做词频统计和排序
          if res != ():
               strs=str(res).decode("unicode-escape")
@@ -40,11 +40,11 @@ if __name__ == '__main__':
               #合并有效数据，插入数据库
               for x in range(len(dd)):
                   dt=dd[x].split(":")
-#                  date1=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+                  date1=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
                   if dt[0]:
                      #转译词频词并且去除空格
                      kw=dt[0].encode('utf-8').strip() 
-                     bugid=db.bug_sel_bugid(subtype[i],date,kw)
+                     bugid=db.bug_sel_bugid_daykeyword(subtype[i],date,kw)
                      bugid=str(bugid).replace("(","").replace(",)","").replace("u","").replace("'","").replace(")","")
                      print date,subtype[i],kw,dt[1],date1,bugid
                      db.bug_keyword_save(date,subtype[i],kw,dt[1],date1,bugid)
