@@ -55,6 +55,8 @@ def get_message():
         html.append("http://180.166.104.154:18080/tfs/DefaultCollection/baa53168-8d92-4fa2-aada-020a50f4244c/2ca57eaf-de46-41d8-a039-dc771c14373f/_api/_backlog/GetBoard?__v=5&hubCategoryReferenceName=Microsoft.RequirementCategory")
         #泡面番
         html.append("http://180.166.104.154:18080/tfs/DefaultCollection/baa53168-8d92-4fa2-aada-020a50f4244c/c43eae63-58c2-494d-9640-f52d5ebdaf69/_api/_backlog/GetBoard?__v=5&hubCategoryReferenceName=Microsoft.RequirementCategory")
+        #区块链
+        html.append("http://180.166.104.154:18080/tfs/DefaultCollection/baa53168-8d92-4fa2-aada-020a50f4244c/3d4f1612-335f-4985-9d16-1f212d66a385/_api/_backlog/GetBoard?__v=5&hubCategoryReferenceName=Microsoft.RequirementCategory")
         htcn=len(html)
         for x in range(htcn):
             dict1=json.loads(urllib2.urlopen(html[x]).read())

@@ -1,14 +1,29 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Sep 17 13:51:29 2017
+Created on Mon Apr 02 13:40:51 2018
 
-@author: Administrator
+@author: Brianzhu
 """
 
-from flask import Flask,request,json
+#import redis
+#
+#r = redis.redis(host='113.107.166.5',post=6379,db=0)
+#r.set('foo', 'bar')
+#
+#r.get('foo')
+
+
+#
+#print redis
+
+
+##
+import redis
+import json
 import db_mysql
 import logging
 import basic_data
+import datetime
 
 logging.basicConfig(level=logging.INFO,
                 format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
@@ -22,24 +37,34 @@ formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
 console.setFormatter(formatter)
 logging.getLogger('').addHandler(console)
 
+#print dir(redis)
 
-app = Flask(__name__)
-dic=[]
-objectid='test'
-commitcode='00000000'
-@app.route('/data',methods=['GET','POST'])
-def index():
+def pop_redis():
+    task=""
+    pool = redis.ConnectionPool(host='113.107.166.5', port=16379, db=0)    
+    r=redis.Redis(connection_pool=pool)
     try:
-        if request.method == 'POST':
-            a = request.get_data()
-#            print a
-            dict1 = json.loads(a)
+    #r.hset("test1", "k1", "v1")
+    #
+    #
+    #print r.hget('test1',"k1")
+    
+    #r.lpush("test2","123","456","678","000")
+    
+    #task = r.brpop('test2')  
+    #print 'pro1 get task:' + task[1];
+    
+        while True:
+            task = r.blpop('ceshi')
+#            print task
+            dict1 = json.loads(task[1],strict=False)
+    #            print dict1
             dic=list(dict1.keys())
- #           logging.info(dic) 
+         #           logging.info(dic) 
             i=int(len(dict1))
-    #        return json.dumps(dict1[dic[i-1]])     ##数组 
-    #            
-    #        return json.dumps(dict1["file:/ts/inke.ts"])
+        #        return json.dumps(dict1[dic[i-1]])     ##数组 
+        #            
+        #        return json.dumps(dict1["file:/ts/inke.ts"])
             j=0
             t=0
             change=[]
@@ -59,24 +84,21 @@ def index():
                     #print date,change[t],name[t]
                     change1=str(change[t])
                     name1=str(name[t])
+        #                    print objectid,date[0],change1,name1,commitcode
                     db.save(objectid,date[0],change1,name1,commitcode)
-#                    print "#################"
-#                    print objectid[0],name[t]
+        #                    print "#################"
+        #                    print objectid[0],name[t]
                     changename_level_cn=db.changename_level_sel(objectid,name1)
-#                    print "changename_level_cn",int(changename_level_cn[0])
+        #                    print "changename_level_cn",int(changename_level_cn[0])
                     if int(changename_level_cn[0]) > 0:
                        objectid1=basic_data.basic_project1(objectid[0])
                        message="近90天bug严重的程序-子项目名称："+objectid1+"-程序名："+name1+"- 有更新"
                        logging.info(message)
                     t=t+1
-            return json.dumps("ok") 
-        else:
-            return '请发POST'
     except :
-        logging.error("error message") 
- 
-     
+        logging.error("error message")         
+
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0',
-        port = 6002,  
-        debug = True )
+   starttime=datetime.datetime.now()
+   print "---pop_redis---开始时间--------------",starttime,"---------------------------------"
+   pop_redis()

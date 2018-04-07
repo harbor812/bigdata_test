@@ -76,7 +76,7 @@ class dbmysql(object):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
         sql = """select js.change_name,kws.object_id,kws.keyword,sum(kws.count_num)  from keywords kws,jenkins_source js 
-                where kws.COMMITcode=js.COMMITcode and  kws.object_id=js.object_id and  DATE_SUB(CURDATE(), INTERVAL 90 DAY) <=date(kws.startdate)
+                where kws.COMMITcode=js.COMMITcode and  kws.object_id=js.object_id and  DATE_SUB(CURDATE(), INTERVAL 90 DAY) <=date(kws.startdate) and  change_name not like '%.css'
                 GROUP BY js.change_name,kws.object_id,kws.keyword """
         cursor.execute(sql)
         results = cursor.fetchall()
