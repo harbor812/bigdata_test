@@ -13,6 +13,8 @@ jieba.load_userdict("newdict.txt")
 
 
 def cut_sentence(sentence): 
+    #加载自定义分词
+#    jieba.load_userdict("newdict.txt")
     stopwords = []  
     delstopwords = {}
     strs=jieba.cut(sentence)

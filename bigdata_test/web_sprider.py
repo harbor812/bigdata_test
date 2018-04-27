@@ -46,6 +46,7 @@ def get_message():
         opener = urllib2.build_opener(auth_NTLM)   
         urllib2.install_opener(opener)   
 #        response = urllib2.urlopen(url).read()
+#        print opener
 #        response = opener.open(url).read()
 
         ###############################################################################
@@ -85,7 +86,7 @@ def to_mysql(dict1):
         for j in range(cn1):
             objectid3=objectid2[j]            
             if objectid3[5] == "Bug":
-               print("-----------------------------------------------------")
+#               print("-----------------------------------------------------")
 #               print objectid3[0] #BUGID
 #               print objectid3[4] #bugname
 #               print objectid3[1] #bugstatus
@@ -99,8 +100,8 @@ def to_mysql(dict1):
                obj6=str(objectid3[6])
                obj34=objectid3[4].encode("utf-8")
                sub_type=basic_data.basic_project(obj34)
-               print ob38[1]
-               print sub_type
+#               print ob38[1]
+#               print sub_type
                if obj7 !='None': ##获取完成时间并且把时间戳格式化成date
                   token=str(re.findall(r'\d+\.?\d',obj7,re.S)) 
                   timestamp=int(token[2:12])
@@ -112,13 +113,35 @@ def to_mysql(dict1):
                   timestamp=int(token[2:12])
                   time_local = time.localtime(timestamp)
                   dt = str(time.strftime("%Y-%m-%d %H:%M:%S",time_local))
-#                  print "创建时间显示 转换前：%s,转换后：%s"%(obj6,dt)
-               print objectid3[0],objectid3[4],objectid3[1],dt,objectid3[3],ob38[1],sub_type
+#                  print "创建时间显示 转换前：%s,转换后：%s"%(obj6,d
+               if "（线上）" in obj34:
+                   is_miss=1
+               else:
+                   is_miss=0
+               if ")" in obj34:
+                   bugname1=obj34.split(")")
+                   bugname2=bugname1[1].split("(")
+                   bugname=bugname2[0]
+               elif "）" in obj34:
+                   bugname1=obj34.split("）")
+                   bugname2=bugname1[1].split("(")
+                   bugname=bugname2[0]
+               elif "】" in obj34:
+                   bugname1=obj34.split("】")
+                   bugname2=bugname1[1].split("(")
+                   bugname=bugname2[0] 
+               else:
+                   bugname=obj34
+#               print "#############################"
+#               print obj34
+#               print "#############################"
+#               print bugname
+#               print objectid3[0],bugname,objectid3[1],dt,objectid3[3],ob38[1],sub_type,is_miss
                cn=db.bug_sel(objectid3[0],objectid3[1])
                cn=int(cn[0])
                if cn == 0:
-                   print objectid3[0],objectid3[4],objectid3[1],dt,objectid3[3],ob38[1],sub_type
-#                db.bug_save(objectid3[0],objectid3[4],objectid3[1],dt,objectid3[3],ob38[1],sub_type)
+#                   print objectid3[0],objectid3[4],objectid3[1],dt,objectid3[3],ob38[1],sub_type,is_miss
+                   db.bug_save(objectid3[0],bugname,objectid3[1],dt,objectid3[3],ob38[1],sub_type,is_miss)
 
 
                                         

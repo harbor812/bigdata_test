@@ -24,6 +24,9 @@ import db_mysql
 import logging
 import basic_data
 import datetime
+import configparser  #ini配置文件
+
+
 
 logging.basicConfig(level=logging.INFO,
                 format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
@@ -39,9 +42,9 @@ logging.getLogger('').addHandler(console)
 
 #print dir(redis)
 
-def pop_redis():
+def pop_redis(ip,port,key):
     task=""
-    pool = redis.ConnectionPool(host='113.107.166.5', port=16379, db=0)    
+    pool = redis.ConnectionPool(host=ip, port=port, db=0)    
     r=redis.Redis(connection_pool=pool)
     try:
     #r.hset("test1", "k1", "v1")
@@ -55,7 +58,7 @@ def pop_redis():
     #print 'pro1 get task:' + task[1];
     
         while True:
-            task = r.blpop('ceshi')
+            task = r.blpop(key)
 #            print task
             dict1 = json.loads(task[1],strict=False)
     #            print dict1
@@ -85,20 +88,33 @@ def pop_redis():
                     change1=str(change[t])
                     name1=str(name[t])
         #                    print objectid,date[0],change1,name1,commitcode
-                    db.save(objectid,date[0],change1,name1,commitcode)
+#                    db.save(objectid,date[0],change1,name1,commitcode)
         #                    print "#################"
         #                    print objectid[0],name[t]
                     changename_level_cn=db.changename_level_sel(objectid,name1)
         #                    print "changename_level_cn",int(changename_level_cn[0])
                     if int(changename_level_cn[0]) > 0:
                        objectid1=basic_data.basic_project1(objectid[0])
-                       message="近90天bug严重的程序-子项目名称："+objectid1+"-程序名："+name1+"- 有更新"
+                       date1=datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                       url="<a href=changename_analyze/"+ name1 +" target=\"_blank\">查看数据分析详细信息</a>"
+                       message=date1+",近90天bug严重的程序-子项目名称："+objectid1+"-程序名："+name1+"- 有更新,"+url
                        logging.info(message)
                     t=t+1
     except :
-        logging.error("error message")         
+        error_message=objectid + date[0]+ name1+ commitcode
+        logging.error(error_message)         
 
 if __name__ == '__main__':
-   starttime=datetime.datetime.now()
-   print "---pop_redis---开始时间--------------",starttime,"---------------------------------"
-   pop_redis()
+   #读取 redis 配置文件
+    config=configparser.ConfigParser()
+    config.read("redis_config.ini")
+    
+    env="test"
+    ip=config.get(env,"IP")
+    port=config.get(env,"port")
+    key=config.get(env,"key")
+   #记录开始时间，开始读取redis数据
+    starttime=datetime.datetime.now()
+    print "---pop_redis---开始时间--------------",starttime,"---------------------------------"
+    print ip,port,key
+    pop_redis(ip,port,key)

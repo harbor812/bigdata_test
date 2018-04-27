@@ -149,6 +149,9 @@ def day_changename(date):
           bug_new='0'
           bug_fix='0'
           bug_close='0'
+          bug_new_id='0'
+          bug_fix_id='0'
+          bug_close_id='0'
     
           ob_data=ob_data_distinct.iloc[i,0]
           #同一个objectid的发布数据，存入对应数据
@@ -201,12 +204,15 @@ def day_changename(date):
                   if bug_close !='0':
                       bugid_close=bug_data1[bug_data1['fx_bugstatus'].str.contains('完成')]
                       bug_close_id=str(list(bugid_close['fx_bugid'])).replace("[","").replace("]","").replace("'","")
+                      bug_close_id=bug_close_id.lstrip(',').rstrip(',')
                   if bug_new !='0':
                       bugid_new=bug_data1[bug_data1['fx_bugstatus'].str.contains('新建')]
                       bug_new_id=str(list(bugid_new['fx_bugid'])).replace("[","").replace("]","").replace("'","")
+                      bug_new_id=bug_new_id.lstrip(',').rstrip(',')
                   if bug_fix !='0':
                       bugid_fix=bug_data1[bug_data1['fx_bugstatus'].str.contains('已提交')]
                       bug_fix_id=str(list(bugid_fix['fx_bugid'])).replace("[","").replace("]","").replace("'","")
+                      bug_fix_id=bug_fix_id.lstrip(',').rstrip(',')
                       
               db.fx_changename_save(ob_data,ob_id,startdate,enddate,bug_new,bug_fix,bug_close,date,add_count,del_count,bug_new_id,bug_fix_id,bug_close_id)
     except UnboundLocalError,e:
@@ -422,24 +428,41 @@ def day_changename_bug_level(date):
                 db.fx_changename_level_save(changename_data,object_id,add_count,del_count,result_count,new_bug_count,"重",date)                
                 
 #            break
-                     
+    
+def day_bug_level(date):
+    db=fenxi_mysql.dbmysql()
+    bug_level=db.fx_bug_levelwords_sel()
+    bug_level_cn=len(bug_level)
+#    level_id=[]
+#    object_id=[]
+#    level_word=[]
+#    print bug_level
+    for x in range(bug_level_cn):
+        object_id=bug_level[x][0]
+        level_word=bug_level[x][1].encode('utf-8')
+        level_id=bug_level[x][2]
+        db.fx_buglevel_update(object_id,level_id,level_word,date)    
+             
+
 if __name__ == '__main__':
    starttime=datetime.datetime.now()
     #
 #   date = datetime.date.today()
 #   date = str(date)+' 23:00:00'
 #   print date
-   date='2017-09-27'
-   print "---day_commitcode---开始时间--------------",starttime,"---------------------------------"
-   day_commitcode(date)
-   print "----day_changename--开始时间--------------",starttime,"---------------------------------"
-   day_changename(date)
-   print "---day_changename_bug_probability---开始时间--------------",starttime,"---------------------------------"
-   day_changename_bug_probability(date)
-   print "--day_changename_topkeyword----开始时间--------------",starttime,"---------------------------------"
-   day_changename_topkeyword(date)
-   print "--day_changename_bug_level----开始时间--------------",starttime,"---------------------------------"
-   day_changename_bug_level(date)
+   date='2017-01-27'
+#   print "---day_commitcode---开始时间--------------",starttime,"---------------------------------"
+#   day_commitcode(date)
+#   print "----day_changename--开始时间--------------",starttime,"---------------------------------"
+#   day_changename(date)
+#   print "---day_changename_bug_probability---开始时间--------------",starttime,"---------------------------------"
+#   day_changename_bug_probability(date)
+#   print "--day_changename_topkeyword----开始时间--------------",starttime,"---------------------------------"
+#   day_changename_topkeyword(date)
+#   print "--day_changename_bug_level----开始时间--------------",starttime,"---------------------------------"
+#   day_changename_bug_level(date)
+   print "--day_bug_level----开始时间--------------",starttime,"---------------------------------"
+   day_bug_level(date)
    endtime=datetime.datetime.now()
 #   endtime=datetime.datetime.strptime(date, '%Y-%m-%d %H:%M:%S')
    print endtime

@@ -13,7 +13,7 @@ def basic_project(name):
             return 2
         if "公会系统" in name:
             return 3
-        if "通行证系统" in name:
+        if "通行证系统" in name or "通行证" in name:
             return 4
         if "聚宝盆系统" in name:
             return 5
@@ -41,6 +41,18 @@ def basic_project(name):
             return 16
         if "平台分享" in name:
             return 17
+        if "范特西appIOS" in name or "范特西appiOS" in name:
+            return 19
+        if "范特西app安卓" in name:
+            return 20
+        if "范特西" in name:
+            return 18
+        if "小葫芦星球appIOS" in name:
+            return 22
+        if "小葫芦星球app安卓" in name:
+            return 23
+        if "小葫芦星球" in name:
+            return 21
         else:
             return 99
 
@@ -78,7 +90,19 @@ def basic_project1(name):
        if "15" in name:
            return "泡面番app安卓" 
        if "17" in name:
-           return "平台分享" 
+           return "平台分享"
+       if "18" in name:
+           return "范特西"
+       if "19" in name:
+           return "范特西appIOS"
+       if "20" in name:
+           return "范特西app安卓"
+       if "21" in name:
+           return "小葫芦星球"
+       if "22" in name:
+           return "小葫芦星球appIOS"
+       if "23" in name:
+           return "小葫芦星球app安"
        else:
            return "其他"
 

@@ -25,14 +25,14 @@ class dbmysql(object):
         conn.commit()
         cursor.close()
         conn.close()
-    def bug_save(self,bug_id,bug_name,bug_status,date,complete_user,ttype,sub_type):
+    def bug_save(self,bug_id,bug_name,bug_status,date,complete_user,ttype,sub_type,is_miss):
         if complete_user =="":
             complete_user="暂无"
     #    conn = mdb.connect('localhost','root','zwg123456','test_bigdata')
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "INSERT into bug (bug_id,bug_name,bug_status,date,complete_user,type,sub_type)VALUES (%s,%s,%s,%s,%s,%s,%s)"
-        cursor.execute(sql,(bug_id,bug_name,bug_status,date,complete_user,ttype,sub_type))
+        sql = "INSERT into bug (bug_id,bug_name,bug_status,date,complete_user,type,sub_type,is_miss)VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(bug_id,bug_name,bug_status,date,complete_user,ttype,sub_type,is_miss))
         conn.commit()
         cursor.close()
         conn.close()
