@@ -21,6 +21,7 @@ def keywords(date):
     jenkins_source=db.bug_sel_commitcode(date)
     cn=len(jenkins_source)
     fcn=0
+    count_num=0
     for i in range(cn):
      #   print fx_jk[i][1],type(fx_jk[i][1].encode('utf-8'))
        ob_data.append(jenkins_source[i][0].encode('utf-8'))
@@ -83,8 +84,10 @@ def keywords(date):
                         kw=dt[0].encode('utf-8').strip() 
                         bugid=db.bug_sel_bugid(ob_id,startdate,enddate,kw)
                         bugid=str(bugid).replace("(","").replace(",)","").replace("u","").replace("'","").replace(")","")
+                        if dt[1] !='':
+                            count_num=dt[1]
                         print ob_data,ob_id,kw,dt[1],startdate,enddate,bugid
-                        db.keyword_save(ob_data,ob_id,kw,dt[1],startdate,enddate,bugid)
+                        db.keyword_save(ob_data,ob_id,kw,count_num,startdate,enddate,bugid)
                         db.keyword_del()
 #      endtime=datetime
 #      rtime=(endtime - starttime).seconds 
@@ -103,7 +106,7 @@ if __name__ == '__main__':
  date = str(date)
    
 #print date
- date='2018-04-11'
+ date='2018-02-08'
  print "------开始时间--------------",starttime,"---------------------------------"
  keywords(date)
  endtime=datetime.datetime.now()

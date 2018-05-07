@@ -88,7 +88,7 @@ def pop_redis(ip,port,key):
                     change1=str(change[t])
                     name1=str(name[t])
         #                    print objectid,date[0],change1,name1,commitcode
-#                    db.save(objectid,date[0],change1,name1,commitcode)
+                    db.save(objectid,date[0],change1,name1,commitcode)
         #                    print "#################"
         #                    print objectid[0],name[t]
                     changename_level_cn=db.changename_level_sel(objectid,name1)

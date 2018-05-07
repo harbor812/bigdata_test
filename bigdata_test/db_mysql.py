@@ -66,7 +66,7 @@ class dbmysql(object):
     def bug_sel_bugname(self,object_id,startdate,enddate):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "select bug_name from bug where sub_type=%s and date >=%s and date <=%s and bug_status='完成'"
+        sql = "select bug_name from bug where sub_type=%s and date >=%s and date <=%s and bug_status='新建'"
         cursor.execute(sql,(object_id,startdate,enddate))
         results = cursor.fetchall()
         return results
@@ -174,6 +174,30 @@ class dbmysql(object):
         cursor.execute(sql,(objectid,change_name))
         results = cursor.fetchone()
         return results
+        cursor.close()
+        conn.close()
+    def bug_levelwords_sel(self):
+        #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = """select object_id,level_word,level_id from bug_levelwords"""
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        return results
+        cursor.close()
+        conn.close()
+    def buglevel_update(self,object_id,level_id,level_word,date):
+        if object_id == 0:
+            object_id=''
+        else:
+            object_id= "sub_type=\"+object_id+\" and "
+            
+        #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "update bug set level_id=%s where "+object_id+" date >=%s and bug_name like '%%"+level_word+"%%' "
+        cursor.execute(sql,(level_id,date))
+        conn.commit()
         cursor.close()
         conn.close()
 #res=dbmysql().bug_sel_subtype("2017-09-13")

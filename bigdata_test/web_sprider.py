@@ -144,6 +144,23 @@ def to_mysql(dict1):
                    db.bug_save(objectid3[0],bugname,objectid3[1],dt,objectid3[3],ob38[1],sub_type,is_miss)
 
 
-                                        
+def day_bug_level(date):
+    db=db_mysql.dbmysql()
+    bug_level=db.bug_levelwords_sel()
+    bug_level_cn=len(bug_level)
+#    level_id=[]
+#    object_id=[]
+#    level_word=[]
+#    print bug_level
+    for x in range(bug_level_cn):
+        object_id=bug_level[x][0]
+        level_word=bug_level[x][1].encode('utf-8')
+        level_id=bug_level[x][2]
+        db.buglevel_update(object_id,level_id,level_word,date)
+                                       
 if __name__ == '__main__':
+    date=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+#    print date
+#    date='2018-05-07 01:06:37'
     get_message()
+    day_bug_level(date)
