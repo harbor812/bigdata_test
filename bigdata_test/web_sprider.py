@@ -6,7 +6,7 @@ Created on Tue Sep 19 13:29:17 2017
 """
 
 #import re
-import urllib2,re,time
+import urllib2,re,time,datetime
 import json
 from ntlm import HTTPNtlmAuthHandler
 import logging
@@ -155,12 +155,16 @@ def day_bug_level(date):
     for x in range(bug_level_cn):
         object_id=bug_level[x][0]
         level_word=bug_level[x][1].encode('utf-8')
-        level_id=bug_level[x][2]
+        level_id=bug_level[x][2] 
+        print level_id,level_word
         db.buglevel_update(object_id,level_id,level_word,date)
+
                                        
 if __name__ == '__main__':
-    date=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+#    date=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+#    date=(datetime.datetime.now()+datetime.timedelta(days=-1)).strftime("%Y-%m-%d %H:%M:%S")
 #    print date
-#    date='2018-05-07 01:06:37'
-    get_message()
+#    print date
+    date='2018-05-07 01:06:37'
+#    get_message()
     day_bug_level(date)

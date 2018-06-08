@@ -6,7 +6,8 @@ Created on Thu Oct 26 18:56:58 2017
 """
 
 import jieba,nltk
-import codecs   
+import codecs  
+import jieba.posseg 
 
 #加载自定义分词
 jieba.load_userdict("newdict.txt")  

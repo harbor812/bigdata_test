@@ -433,16 +433,251 @@ def day_bug_level(date):
     db=fenxi_mysql.dbmysql()
     bug_level=db.fx_bug_levelwords_sel()
     bug_level_cn=len(bug_level)
-#    level_id=[]
-#    object_id=[]
-#    level_word=[]
+#    print date
+    buglevel_data=pd.DataFrame({'fx_tag_name':[],'fx_level_id':[],'fx_object_id':[],'fx_bugid':[]})
+
 #    print bug_level
+    #合并所有bug+level_id 的数据
     for x in range(bug_level_cn):
         object_id=bug_level[x][0]
         level_word=bug_level[x][1].encode('utf-8')
         level_id=bug_level[x][2]
-        db.fx_buglevel_update(object_id,level_id,level_word,date)    
+        tag_name=bug_level[x][3]
+#        print object_id,level_id,level_word,date
+        bugid_list=db.fx_buglevel_bugid_sel(object_id,level_word,date)  
+        fx_tag_name=[]
+        fx_level_id=[]
+        fx_object_id=[]
+        fx_bugid=[]
+        #进行数据合并  
+        for y in range(len(bugid_list)):
+#             print bugid_list[y][0]
+             fx_tag_name.append(tag_name)
+             fx_level_id.append(level_id)
+             fx_object_id.append(object_id)
+             fx_bugid.append(bugid_list[y][0]) 
+        buglevel_data1=pd.DataFrame({'fx_tag_name':fx_tag_name,'fx_level_id':fx_level_id,'fx_object_id':fx_object_id,'fx_bugid':fx_bugid})
+
+        frames=[buglevel_data,buglevel_data1]
+        buglevel_data=pd.concat(frames)
+#        
+#        print buglevel_data
+    #获取所有bug_id
+    bugid_distinct = buglevel_data.drop_duplicates(['fx_bugid'])
+#    print bugid_distinct
+    #统计条数
+    bugid_cn=bugid_distinct['fx_bugid'].count()
+    
+    ###对每个BUG 等级和标签 进行分析
+    for i in range(bugid_cn):
+           bug_id=str(bugid_distinct.iloc[i,0])
+#           print type(bug_id)
+           #对每个bug_id 进行等级分析#
+           buglevel_cn=buglevel_data[(buglevel_data['fx_bugid'] == bug_id)]['fx_bugid'].count()
+           buglevel_cn1=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == 1)]['fx_bugid'].count()
+           buglevel_cn2=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == 2)]['fx_bugid'].count()
+           buglevel_cn3=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == 3)]['fx_bugid'].count()
+           buglevel_cn4=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == 4)]['fx_bugid'].count()
+#           print "######################################"
+           bug1=float(format(float(buglevel_cn1)/float(buglevel_cn)* 100,'.2f'))
+           bug2=float(format(float(buglevel_cn2)/float(buglevel_cn)* 80,'.2f'))
+           bug3=float(format(float(buglevel_cn3)/float(buglevel_cn)* 40,'.2f'))
+           bug4=float(format(float(buglevel_cn4)/float(buglevel_cn)* 10,'.2f'))
+           bugformat=pd.DataFrame({'level_id':[1,2,3,4],'level_idcont':[bug1,bug2,bug3,bug4]})
+           
+           #,ascending=False  降序
+           bugorder=bugformat.sort_index(by=['level_idcont'],ascending=False)
+#           order1=bugorder.iloc[0,1]
+#           order2=bugorder.iloc[1,1]
+#           print order2,order1
+#           if order1 == order2:
+#               levelid=bugorder.iloc[1,0]
+#               print levelid
+#           else:
+#               levelid=bugorder.iloc[0,0]
+#               print levelid
+#           print "######################################"
+#           order1=bugorder.iloc[0,1]
+           levelid=bugorder.iloc[0,0]
+#           print levelid,order1,bug_id
+#           print "######################################"
+#           print bugorder
+
+           #对 每个bug_id 进行标签分析
+           bug_bugid=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == levelid)]
+           bugid_tagname_distinct = bug_bugid.drop_duplicates(['fx_tag_name'])
+           bugid_tagname_cn=bugid_tagname_distinct['fx_bugid'].count()
+           print bugid_tagname_distinct
+           tagname_cn=0
+           bug_tagname=''
+           for z in range(bugid_tagname_cn):
+                  bug_tagname1=bugid_tagname_distinct.iloc[z,3]
+                  tagname_cn1=int(bug_bugid[(bug_bugid['fx_tag_name'] == bug_tagname1)]['fx_tag_name'].count())
+                  print bug_tagname1
+                  print tagname_cn1
+
+                  if tagname_cn1 > tagname_cn:
+                           bug_tagname=bug_tagname1
+                           tagname_cn=tagname_cn1
+#           print "######################################"                 
+#           print bug_tagname,levelid,order1,bug_id
+           db.fx_buglevel_update(levelid,bug_tagname,bug_id)
+           
+#    print buglevel_data[(buglevel_data['fx_bugid'] == '7313')]
+
+def day_bug_level1(date):
+    date=(datetime.datetime.now()+datetime.timedelta(days=-1)).strftime("%Y-%m-%d %H:%M:%S")
+    db=fenxi_mysql.dbmysql()
+    bug_level=db.fx_bug_levelwords_sel()
+    bug_level_cn=len(bug_level)
+
+    buglevel_data=pd.DataFrame({'fx_tag_name':[],'fx_level_id':[],'fx_object_id':[],'fx_bugid':[]})
+
+#    print bug_level
+    #合并所有bug+level_id 的数据
+    for x in range(bug_level_cn):
+        object_id=bug_level[x][0]
+        level_word=bug_level[x][1].encode('utf-8')
+        level_id=bug_level[x][2]
+        tag_name=bug_level[x][3]
+#        print object_id,level_id,level_word,date
+        bugid_list=db.fx_buglevel_bugid_sel(object_id,level_word,date)  
+#        print bugid_list
+        fx_tag_name=[]
+        fx_level_id=[]
+        fx_object_id=[]
+        fx_bugid=[]
+        #进行数据合并  
+        for y in range(len(bugid_list)):
+#             print bugid_list[y][0]
+             fx_tag_name.append(tag_name)
+             fx_level_id.append(level_id)
+             fx_object_id.append(object_id)
+             fx_bugid.append(bugid_list[y][0]) 
+        buglevel_data1=pd.DataFrame({'fx_tag_name':fx_tag_name,'fx_level_id':fx_level_id,'fx_object_id':fx_object_id,'fx_bugid':fx_bugid})
+
+        frames=[buglevel_data,buglevel_data1]
+        buglevel_data=pd.concat(frames)
+#        
+#        print buglevel_data
+    #获取所有bug_id
+    bugid_distinct = buglevel_data.drop_duplicates(['fx_bugid'])
+#    print bugid_distinct
+    #统计条数
+    bugid_cn=bugid_distinct['fx_bugid'].count()
+    
+    ###对每个BUG 等级和标签 进行分析
+    for i in range(bugid_cn):
+           bug_id=str(bugid_distinct.iloc[i,0])
+#           print type(bug_id)
+           #对每个bug_id 进行等级分析#
+           buglevel_cn=buglevel_data[(buglevel_data['fx_bugid'] == bug_id)]['fx_bugid'].count()
+           buglevel_cn1=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == 1)]['fx_bugid'].count()
+           buglevel_cn2=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == 2)]['fx_bugid'].count()
+           buglevel_cn3=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == 3)]['fx_bugid'].count()
+           buglevel_cn4=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == 4)]['fx_bugid'].count()
+#           print "######################################"
+           bug1=float(format(float(buglevel_cn1)/float(buglevel_cn)* 100,'.2f'))
+           bug2=float(format(float(buglevel_cn2)/float(buglevel_cn)* 80,'.2f'))
+           bug3=float(format(float(buglevel_cn3)/float(buglevel_cn)* 40,'.2f'))
+           bug4=float(format(float(buglevel_cn4)/float(buglevel_cn)* 10,'.2f'))
+           bugformat=pd.DataFrame({'level_id':[1,2,3,4],'level_idcont':[bug1,bug2,bug3,bug4]})
+           
+           #,ascending=False  降序
+           bugorder=bugformat.sort_index(by=['level_idcont'],ascending=False)
+#           order1=bugorder.iloc[0,1]
+#           order2=bugorder.iloc[1,1]
+#           print order2,order1
+#           if order1 == order2:
+#               levelid=bugorder.iloc[1,0]
+#               print levelid
+#           else:
+#               levelid=bugorder.iloc[0,0]
+#               print levelid
+#           print "######################################"
+#           order1=bugorder.iloc[0,1]
+           levelid=bugorder.iloc[0,0]
+#           print levelid,order1,bug_id
+#           print "######################################"
+#           print bugorder
+
+           #对 每个bug_id 进行标签分析
+           bug_bugid=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == levelid)]
+           bugid_tagname_distinct = bug_bugid.drop_duplicates(['fx_tag_name'])
+           bugid_tagname_cn=bugid_tagname_distinct['fx_bugid'].count()
+           print bugid_tagname_distinct
+           tagname_cn=0
+           bug_tagname=''
+           for z in range(bugid_tagname_cn):
+                  bug_tagname1=bugid_tagname_distinct.iloc[z,3]
+                  tagname_cn1=int(bug_bugid[(bug_bugid['fx_tag_name'] == bug_tagname1)]['fx_tag_name'].count())
+                  print bug_tagname1
+                  print tagname_cn1
+
+                  if tagname_cn1 > tagname_cn:
+                           bug_tagname=bug_tagname1
+                           tagname_cn=tagname_cn1
+#           print "######################################"                 
+#           print bug_tagname,levelid,order1,bug_id
+           db.fx_buglevel_update(levelid,bug_tagname,bug_id)
+               
+    
+    
+        
+        
              
+
+#def day_project(date):
+#    db=fenxi_mysql.dbmysql()
+#    fx_change_name=[]
+#    fx_change_name1=[]
+#    fx_object_id=[]
+#    fx_object_id1=[]
+#    fx_keyword=[]
+#    fx_keywrod_count=[]
+#
+#    fx_cns=db.fx_sel_bug(date)
+##    print  "fx_cns:",fx_cns
+#    cn_fx_cn=len(fx_cns)
+#    #获取change_name+object_id，并按照change_name+object_id去重
+#    for i in range(cn_fx_cn):
+#     #   print fx_jk[i][1],type(fx_jk[i][1].encode('utf-8'))
+#        fx_change_name1.append(fx_cns[i][0].encode('utf-8'))
+#        fx_object_id1.append(fx_cns[i][1])
+#    fx_change_name1=pd.DataFrame({'fx_object_id1':fx_object_id1,'fx_change_name1':fx_change_name1})
+#    fx_change_name1_distinct = fx_change_name1.drop_duplicates()  
+##    print fx_change_name1_distinct
+#    cn1=len(fx_change_name1_distinct)
+##    print fx_change_name1_distinct     
+#    #获取change_name+object_id+new_bug_count
+#    for x in range(cn_fx_cn):
+#          fx_change_name.append(fx_cns[x][0].encode('utf-8'))
+#          fx_object_id.append(fx_cns[x][1])
+#          fx_keyword.append(fx_cns[x][2].encode('utf-8'))
+#          fx_keywrod_count.append(fx_cns[x][3]) 
+#    #数组保存成DataFrame
+#    cns_data=pd.DataFrame({'fx_change_name':fx_change_name,'fx_object_id':fx_object_id,'fx_keyword':fx_keyword,'fx_keywrod_count':fx_keywrod_count})
+#
+#    for i in range(cn1):
+##        print '##########################################'
+#        changename_data=fx_change_name1_distinct.iloc[i,0]
+#        object_id=fx_change_name1_distinct.iloc[i,1]
+##        print changename_data,object_id
+#
+#        changename_data1=cns_data[(cns_data['fx_change_name'] == changename_data) &(cns_data['fx_object_id'] == object_id)]
+##        print changename_data1
+##        print '##########################################'
+#        #按照fx_keywrod_count 倒序
+#        key_order=changename_data1.sort_values(by='fx_keywrod_count',axis = 0,ascending = False)
+#        #取第一行数据
+#        changename_1=key_order.iloc[0,0]
+#        keyword_1=key_order.iloc[0,1]
+#        keywrod_count_1=key_order.iloc[0,2]
+#        object_id_1=key_order.iloc[0,3]
+##        print key_order
+##        print '##########################################'
+##        print changename_1,object_id_1,keyword_1,keywrod_count_1,date
+#        db.fx_changename_Topkeyword_save(changename_1,object_id_1,keyword_1,keywrod_count_1,date)
 
 if __name__ == '__main__':
    starttime=datetime.datetime.now()
@@ -462,6 +697,7 @@ if __name__ == '__main__':
 #   print "--day_changename_bug_level----开始时间--------------",starttime,"---------------------------------"
 #   day_changename_bug_level(date)
    print "--day_bug_level----开始时间--------------",starttime,"---------------------------------"
+#   date=(datetime.datetime.now()+datetime.timedelta(days=-1)).strftime("%Y-%m-%d")
    day_bug_level(date)
    endtime=datetime.datetime.now()
 #   endtime=datetime.datetime.strptime(date, '%Y-%m-%d %H:%M:%S')

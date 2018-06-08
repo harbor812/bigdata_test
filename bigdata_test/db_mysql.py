@@ -180,13 +180,14 @@ class dbmysql(object):
         #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = """select object_id,level_word,level_id from bug_levelwords"""
+        sql = """select object_id,level_word,level_id from bug_levelwords where status=0 and tag_name is not null"""
         cursor.execute(sql)
         results = cursor.fetchall()
         return results
         cursor.close()
         conn.close()
     def buglevel_update(self,object_id,level_id,level_word,date):
+#        level_id=int(level_id)
         if object_id == 0:
             object_id=''
         else:
@@ -195,8 +196,70 @@ class dbmysql(object):
         #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "update bug set level_id=%s where "+object_id+" date >=%s and bug_name like '%%"+level_word+"%%' "
-        cursor.execute(sql,(level_id,date))
+        sql = "update bug set level_id=%s where "+object_id+" date >=%s and bug_name like '%%"+level_word+"%%' and (level_id >=%s or level_id is null)"
+        cursor.execute(sql,(level_id,date,level_id))
+        conn.commit()
+        cursor.close()
+        conn.close()
+    def bug_sel_allbugname(self):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select bug_name from bug where bug_status='新建'"
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        return results
+        cursor.close()
+        conn.close()
+    def levelwords_count(self,keyword):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select count(*) from bug_levelwords where level_word='"+keyword+"' "
+        cursor.execute(sql)
+        results = cursor.fetchone()
+        return results
+        cursor.close()
+        conn.close()
+    def levelwords_insert(self,keyword,status):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "INSERT into bug_levelwords (object_id,level_word,status)VALUES ('0','"+keyword+"','"+status+"')"
+        cursor.execute(sql)
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+    def levelwords_selname(self):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select level_word from bug_levelwords"
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        return results
+        cursor.close()
+        conn.close()
+    def levelwords_detail(self,keyword):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select level_id,tag_name from bug_levelwords where level_word='"+keyword+"' "
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        return results
+        cursor.close()
+        conn.close()
+    def levelwords_no_tagname(self):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select level_word from bug_levelwords where status=1 "
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        return results
+        cursor.close()
+        conn.close()
+    def levelwords_update(self,keyword,level_id,tag_name,same_word,Similarity,status):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "update bug_levelwords set level_id=%s,tag_name=%s,same_word=%s,Similarity=%s,status=%s where level_word='"+keyword+"'"
+        cursor.execute(sql,(level_id,tag_name,same_word,Similarity,status))
         conn.commit()
         cursor.close()
         conn.close()
