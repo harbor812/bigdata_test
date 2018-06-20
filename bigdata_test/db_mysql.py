@@ -7,18 +7,20 @@ Created on Sun Sep 17 13:50:28 2017
 import MySQLdb as mdb
 
 class dbmysql(object):
-#    localhost='127.0.0.1'
+#    localhost='113.107.166.5'
 #    user='root'
 #    passwd='rp1qaz@WSX'
 #    databases='test_bigdata'
+#    port=11606
     localhost='localhost'
     user='root'
     passwd='zwg123456'
     databases='test_bigdata'
+    port=3306
     def save(self,objectname,date,change,name,commitcode):
 #        print objectname,name,change,date,commitcode
     #    conn = mdb.connect('localhost','root','zwg123456','test_bigdata')
-        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        conn = mdb.connect(host=self.localhost,user=self.user,passwd=self.passwd,db=self.databases,port=self.port,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
         sql = "INSERT into jenkins_source (object_id,change_name,change_source,date,commitcode)VALUES (%s,%s,%s,%s,%s)"
         cursor.execute(sql,(objectname,name,change,date,commitcode))
@@ -41,6 +43,15 @@ class dbmysql(object):
         cursor=conn.cursor()          #定义连接对象
         sql = "select count(*) from bug where bug_id=%s and bug_status=%s"
         cursor.execute(sql,(bug_id,bug_status))
+        results = cursor.fetchone()
+        return results
+        cursor.close()
+        conn.close()
+    def bug_sel_tandao(self,bug_id,bug_status,sub_type):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select count(*) from bug where bug_id=%s and bug_status=%s and sub_type=%s"
+        cursor.execute(sql,(bug_id,bug_status,sub_type))
         results = cursor.fetchone()
         return results
         cursor.close()

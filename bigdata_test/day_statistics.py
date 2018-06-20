@@ -685,7 +685,7 @@ if __name__ == '__main__':
 #   date = datetime.date.today()
 #   date = str(date)+' 23:00:00'
 #   print date
-   date='2017-01-27'
+   date='2018-01-27'
 #   print "---day_commitcode---开始时间--------------",starttime,"---------------------------------"
 #   day_commitcode(date)
 #   print "----day_changename--开始时间--------------",starttime,"---------------------------------"

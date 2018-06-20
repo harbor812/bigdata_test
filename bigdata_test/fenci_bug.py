@@ -60,22 +60,23 @@ if __name__ == '__main__':
                       
                       if dt[1] != '':
                          #转译词频词并且去除空格
-                         kw=dt[0].encode('utf-8').strip() 
-                         bugid=db.bug_sel_bugid_daykeyword(subtype[i],date,kw)
-                         bugid=str(bugid).replace("(","").replace(",)","").replace("u","").replace("'","").replace(")","")
+                         kw=dt[0].encode('utf-8').strip()
+                         if kw !='\\':
+                             bugid=db.bug_sel_bugid_daykeyword(subtype[i],date,kw)
+                             bugid=str(bugid).replace("(","").replace(",)","").replace("u","").replace("'","").replace(")","")
     #                     print date,subtype[i],kw,dt[1],date1,bugid
 #                         print kw,dt[1]
-                         db.bug_keyword_save(date,subtype[i],kw,dt[1],date1,bugid)                    
+                             db.bug_keyword_save(date,subtype[i],kw,dt[1],date1,bugid)                    
     #                     print kw
     #                     time.sleep(1)
-                         if dt[1] > 1:
-                             kwcount=db.levelwords_count(kw)
-                             kwcount=kwcount[0]
+                             if dt[1] > 1:
+                                 kwcount=db.levelwords_count(kw)
+                                 kwcount=kwcount[0]
         #                     print kwcount
                              #如果bug_levelwords 表没有 就插入
-                             if kwcount ==0:
-                                 db.levelwords_insert(kw,'1')
-                         db.bug_keyword_del()
+                                 if kwcount ==0:
+                                     db.levelwords_insert(kw,'1')
+                             db.bug_keyword_del()
      except Exception,e:
          print e.message
                               

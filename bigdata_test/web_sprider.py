@@ -11,7 +11,7 @@ import json
 from ntlm import HTTPNtlmAuthHandler
 import logging
 from cookielib import CookieJar
-import db_mysql,basic_data
+import db_mysql,basic_data,chandao_mysql
 
 
 cj = CookieJar()
@@ -159,7 +159,33 @@ def day_bug_level(date):
         print level_id,level_word
         db.buglevel_update(object_id,level_id,level_word,date)
 
-                                       
+def zentao_get_message(date):
+    db1=chandao_mysql.zd_dbmysql()
+    db=db_mysql.dbmysql()
+    bug_list=db1.bug_sel(date)
+    print bug_list
+    sub_type=25
+    type='应用中心系统'
+    for i in range(len(bug_list)):
+        print bug_list[i][0],bug_list[i][1],bug_list[i][2],bug_list[i][3],bug_list[i][4]
+        print "##################################################"
+        if   bug_list[i][2]=='active':
+             bug_status='新建'
+        if   bug_list[i][2]=='resolved':
+             bug_status='已提交'
+        if   bug_list[i][2]=='closed':
+             bug_status='完成'
+        cn=db.bug_sel_tandao(bug_list[i][0],bug_status,sub_type)
+        cn=int(cn[0])
+        if cn == 0:
+           bug_name=bug_list[i][1].encode('utf-8')
+           if "（线上）" in bug_name:
+                   is_miss=1
+           else:
+                   is_miss=0
+           date=str(bug_list[i][3])
+           user_name=bug_list[i][4].encode('utf-8')
+           db.bug_save(bug_list[i][0],bug_name,bug_status,date,user_name,type,sub_type,is_miss)                      
 if __name__ == '__main__':
 #    date=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
 #    date=(datetime.datetime.now()+datetime.timedelta(days=-1)).strftime("%Y-%m-%d %H:%M:%S")
@@ -167,4 +193,5 @@ if __name__ == '__main__':
 #    print date
     date='2018-05-07 01:06:37'
 #    get_message()
-    day_bug_level(date)
+    zentao_get_message(date)
+#    day_bug_level(date)
