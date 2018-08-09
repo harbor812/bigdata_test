@@ -5,24 +5,11 @@ Created on Mon Apr 02 13:40:51 2018
 @author: Brianzhu
 """
 
-#import redis
-#
-#r = redis.redis(host='113.107.166.5',post=6379,db=0)
-#r.set('foo', 'bar')
-#
-#r.get('foo')
-
-
-#
-#print redis
-
-
-##
 import redis
 import json
 import db_mysql
 import logging
-import basic_data
+#import basic_data
 import datetime
 import configparser  #ini配置文件
 
@@ -94,7 +81,10 @@ def pop_redis(ip,port,key):
                     changename_level_cn=db.changename_level_sel(objectid,name1)
         #                    print "changename_level_cn",int(changename_level_cn[0])
                     if int(changename_level_cn[0]) > 0:
-                       objectid1=basic_data.basic_project1(objectid[0])
+                       objectid1=db.object_name_sel(objectid[0])
+                       objectid1=str(objectid1).decode("unicode-escape")
+                       objectid1=objectid1.replace("(u'","").replace(",)","").replace("(","").replace("'","").encode('utf-8')
+#                       print objectid1
                        date1=datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                        url="<a href=changename_analyze/"+ name1 +" target=\"_blank\">查看数据分析详细信息</a>"
                        message=date1+",近90天bug严重的程序-子项目名称："+objectid1+"-程序名："+name1+"- 有更新,"+url

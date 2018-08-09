@@ -175,7 +175,8 @@ def zentao_get_message(date):
              bug_status='已提交'
         if   bug_list[i][2]=='closed':
              bug_status='完成'
-        cn=db.bug_sel_tandao(bug_list[i][0],bug_status,sub_type)
+        date=str(bug_list[i][3])
+        cn=db.bug_sel_tandao(bug_list[i][0],bug_status,sub_type,date)
         cn=int(cn[0])
         if cn == 0:
            bug_name=bug_list[i][1].encode('utf-8')
@@ -183,15 +184,16 @@ def zentao_get_message(date):
                    is_miss=1
            else:
                    is_miss=0
-           date=str(bug_list[i][3])
+#           date=str(bug_list[i][3])
            user_name=bug_list[i][4].encode('utf-8')
+#           print bug_list[i][0],bug_name,bug_status,date,user_name,type,sub_type,is_miss
            db.bug_save(bug_list[i][0],bug_name,bug_status,date,user_name,type,sub_type,is_miss)                      
 if __name__ == '__main__':
 #    date=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
-#    date=(datetime.datetime.now()+datetime.timedelta(days=-1)).strftime("%Y-%m-%d %H:%M:%S")
+    date=(datetime.datetime.now()+datetime.timedelta(days=-1)).strftime("%Y-%m-%d %H:%M:%S")
+    print date
 #    print date
-#    print date
-    date='2018-05-07 01:06:37'
-#    get_message()
+    date='2018-06-27 01:06:37'
+##    get_message()
     zentao_get_message(date)
 #    day_bug_level(date)

@@ -114,7 +114,7 @@ class dbmysql(object):
         #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = """select object_id,level_word,level_id,tag_name from bug_levelwords where status=0"""
+        sql = """select object_id,level_word,level_id,tag_name,ifnull(priority,0) from bug_levelwords where status=0"""
         cursor.execute(sql)
         results = cursor.fetchall()
         return results

@@ -47,11 +47,11 @@ class dbmysql(object):
         return results
         cursor.close()
         conn.close()
-    def bug_sel_tandao(self,bug_id,bug_status,sub_type):
+    def bug_sel_tandao(self,bug_id,bug_status,sub_type,date):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "select count(*) from bug where bug_id=%s and bug_status=%s and sub_type=%s"
-        cursor.execute(sql,(bug_id,bug_status,sub_type))
+        sql = "select count(*) from bug where bug_id=%s and bug_status=%s and sub_type=%s and date=%s"
+        cursor.execute(sql,(bug_id,bug_status,sub_type,date))
         results = cursor.fetchone()
         return results
         cursor.close()
@@ -260,7 +260,7 @@ class dbmysql(object):
     def levelwords_no_tagname(self):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "select level_word from bug_levelwords where status=1 "
+        sql = "select level_word from bug_levelwords where status=1 or (Similarity < 0.8 and Similarity !='')"
         cursor.execute(sql)
         results = cursor.fetchall()
         return results
@@ -272,6 +272,15 @@ class dbmysql(object):
         sql = "update bug_levelwords set level_id=%s,tag_name=%s,same_word=%s,Similarity=%s,status=%s where level_word='"+keyword+"'"
         cursor.execute(sql,(level_id,tag_name,same_word,Similarity,status))
         conn.commit()
+        cursor.close()
+        conn.close()
+    def object_name_sel(self,objectid):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select object_name from object_name where object_id='"+objectid+"'"
+        cursor.execute(sql)
+        results = cursor.fetchone()
+        return results
         cursor.close()
         conn.close()
 #res=dbmysql().bug_sel_subtype("2017-09-13")
