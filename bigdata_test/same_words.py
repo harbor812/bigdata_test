@@ -14,7 +14,7 @@ import datetime
 def wordresult(db):
     dd= db.levelwords_selname()
     bugname=str(dd).decode("unicode-escape")
-    print bugname
+#    print bugname
     bugname=bugname.replace("(u'","").replace(",)","").replace("(","").replace("'","")
     bugname=bugname.replace(")","").encode('utf-8')
     
@@ -51,7 +51,9 @@ def similarity(db,keywords):
     #sentences=np.array(st_list).reshape(1,12)
     #sentences2=np.array(st_list,dtype=str).reshape((1,stlen))
     sentences1=[[] for i in range(stlen)]
-    
+    print type(st_list)
+    print st_list
+    print type(sentences1)
     for a in range(0,stlen):    
         sentences1[a].append(st_list[a])  
     
@@ -68,6 +70,7 @@ def similarity(db,keywords):
 #    if kw1==keywords1:
 #       keywords1=y1[1][0]
 #       sim=y1[1][1]
+    print sentences1
     keywords1=keywords.encode('utf-8')
     sentlen=len(sentences1)
     for i in range(sentlen):
@@ -95,20 +98,25 @@ if __name__ == '__main__':
             ky=similarity(db,ln)
             same_word=str(ky[0])
             Similarity=ky[1]
-
+            print ln,ky
+            print Similarity
             if Similarity > 0.3:
-               print ln,ky
-               print Similarity
+#               print ln,ky
+#               print Similarity
                levelwords_detail=db.levelwords_detail(same_word)
     #           print ln,ky[0],ky[1]
     #           print "############################"
                level_id=levelwords_detail[0][0]
                tag_name=levelwords_detail[0][1]
     #           print tag_name
-               if tag_name !=None and Similarity > 0.5:
-                   print "############################"
+               if tag_name !=None and '接口' not in tag_name and Similarity > 0.8:
+                   print "########非接口####################"
                    print ln,level_id,tag_name,same_word,Similarity
                    db.levelwords_update(ln,level_id,tag_name,same_word,Similarity,'0')
+               elif tag_name !=None and '接口' in tag_name and Similarity > 0.6:
+                   print "########接口####################"
+                   print ln,level_id,tag_name,same_word,Similarity
+                   db.levelwords_update(ln,level_id,tag_name,same_word,Similarity,'0')                   
                else:
                    print " 为none############################"
                    print ln,level_id,tag_name,same_word,Similarity

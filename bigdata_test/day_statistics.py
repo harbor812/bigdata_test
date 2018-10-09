@@ -546,11 +546,24 @@ def day_bug_level(date):
            
 #    print buglevel_data[(buglevel_data['fx_bugid'] == '7313')]
 def project_stat():
+    db=fenxi_mysql.dbmysql()
+    objectid=''
+    ####今天
     date=datetime.datetime.now().strftime("%Y-%m-%d")
+    ##昨天
     date1=datetime.datetime.now()+datetime.timedelta(days=-1)
     date1=date1.strftime("%Y-%m-%d")
+    ##前天
     date2=datetime.datetime.now()+datetime.timedelta(days=-2)
     date2=date2.strftime("%Y-%m-%d")
+    ##今天结束日
+    date00=datetime.datetime.now()+datetime.timedelta(days=1)
+    date00=date00.strftime("%Y-%m-%d")
+    ##昨天结束日
+    date11=datetime.datetime.now().strftime("%Y-%m-%d")
+    ##前天结束日
+    date22=datetime.datetime.now()+datetime.timedelta(days=-1)
+    date22=date22.strftime("%Y-%m-%d")
     #判断是否为工作日,工作日返回true，非工作日返回false
     cal = Calendar()
     if cal.isbusday(date)==True:
@@ -561,19 +574,78 @@ def project_stat():
                 d1=d1+1
                 days1=-1-d1
                 date1=datetime.datetime.now()+datetime.timedelta(days=days1)
+                date11=date1+datetime.timedelta(days=1)
                 date1=date1.strftime("%Y-%m-%d")
+                date11=date11.strftime("%Y-%m-%d")
             while cal.isbusday(date2)==False :
                 d2=d2+1
                 days2=-2-d2
                 date2=datetime.datetime.now()+datetime.timedelta(days=days2)
+                date22=date2+datetime.timedelta(days=1)
                 date2=date2.strftime("%Y-%m-%d")
+                date22=date22.strftime("%Y-%m-%d")
                 if date1 == date2:
                     d2=d2+1
                     days2=-2-d2
                     date2=datetime.datetime.now()+datetime.timedelta(days=days2)
+                    date22=date2+datetime.timedelta(days=1)
                     date2=date2.strftime("%Y-%m-%d")
+                    date22=date22.strftime("%Y-%m-%d")
     
-    print date,date1,date2    
+        print date,date1,date2 
+        print date00,date11,date22
+    
+    ##############################################################################
+        objectid=db.object_id_sel()
+        objectid_cn=len(objectid)
+        i=1
+#        status=1
+        for i in range(objectid_cn):
+            obid=objectid[i][0]
+            #今天bug数
+            td=int(db.bug_objectid_sel(obid,date,date00)[0])
+            #昨天bug数
+            zt=int(db.bug_objectid_sel(obid,date1,date11)[0])
+            #前天bug数
+            qt=int(db.bug_objectid_sel(obid,date2,date22)[0])
+            pro_stat=db.project_stat_sel(obid,'0')
+            status=int(pro_stat[0])
+            stardate=pro_stat[1]
+            
+            print status,stardate
+
+            ##今天有bug
+            if td >0:
+                print obid
+                print td,zt,qt
+                #项目进行中
+                if status == 1:
+                    if zt ==0 and qt ==0:
+                        total=int(db.bug_objectid_sel(obid,stardate,date2)[0])
+                        jk_total=int(db.jenkins_source_sel(obid,stardate,date2)[0])
+                        db.project_stat_update(total,jk_total,date2,'1',obid,'0')
+                        print "如果项目进行中，今天有bug,更改项目状态为：结束"
+ 
+                #项目结束        
+                if status ==0:
+                    bugcn=td-zt
+                    if bugcn > 1: 
+                        obname=db.object_name_sel(obid)
+                        proname=obname[0]+str(date)
+                        db.project_stat_save(proname,obid,date,'0')
+                        print proname
+            #今天无bug         
+            else:
+                #项目进行中
+                if status == 1:                    
+                    if zt ==0:
+                        total=int(db.bug_objectid_sel(obid,stardate,date1)[0])
+                        jk_total=int(db.jenkins_source_sel(obid,stardate,date1)[0])
+                        db.project_stat_update(total,jk_total,date2,'1',obid,'0')
+                        print "如果项目进行中，今天无bug,更改项目状态为：结束"
+                print obid
+                print td,zt,qt
+    
 
 
 if __name__ == '__main__':
@@ -600,10 +672,10 @@ if __name__ == '__main__':
    print "--project_stat----开始时间--------------",starttime,"---------------------------------"
    project_stat()
    endtime=datetime.datetime.now()
-   print endtime
-#   rtime=(endtime - starttime).seconds
-   if starttime > endtime:
-       rtime=endtime - starttime
-       print "------结束时间-------------",endtime,"------------------------------------"
-       print "------运行耗时-------------",rtime,"----------------------------------------"
+#   print endtime
+##   rtime=(endtime - starttime).seconds
+#   if starttime > endtime:
+#       rtime=endtime - starttime
+#       print "------结束时间-------------",endtime,"------------------------------------"
+#       print "------运行耗时-------------",rtime,"----------------------------------------"
     #:print rtime 

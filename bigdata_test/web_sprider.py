@@ -72,78 +72,101 @@ def to_mysql(dict1):
 #    dic=list(dict1.keys())
 
 #    print json.dumps(object2)
+    try:
+        title=''
+        dt=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+        if "itemSource" in dict1.keys():
+    #        global title
+            objectid=dict1["itemSource"]
+            objectid1=objectid["payload"]
+            objectid2=objectid1["rows"]
+            cn1=len(objectid2)
+            db=db_mysql.dbmysql()
+    #        dt=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+    #        oj33="暂无"
+            for j in range(cn1):
+                objectid3=objectid2[j]
+                            
+                if objectid3[5] == "Bug":
+    #               print("-----------------------------------------------------")
+    #               print objectid3[0] #BUGID
+    #               print objectid3[4] #bugname
+    #               print objectid3[1].encode("utf-8") #bugstatus
+    #               print objectid3[7] #完成时间
+    #               print objectid3[3] #完成人
+    #               print objectid3[2] #父目录
+    #               print objectid3[8] #子目录
+    #               print objectid3[6] #创建时间
+                   if objectid3[1].encode("utf-8") == "新建":
+                       c_user=objectid3[15].split("<")[0]                   
+    #                   print objectid3[15].split("<")[0] #创建时间
+                   else: 
+                       c_user=objectid3[3]                   
+    #                   print objectid3[3] #创建时间
+    #               title=0
+                   ob38=objectid3[8].split("\\")
+                   obj7=str(objectid3[7])
+                   obj6=str(objectid3[6])
+                   obj34=objectid3[4].encode("utf-8")
+                   sub_type=basic_data.basic_project(obj34)
+    #               print ob38[1]
+    #               print sub_type
+                   if obj7 !='None': ##获取完成时间并且把时间戳格式化成date
+                      token=str(re.findall(r'\d+\.?\d',obj7,re.S)) 
+                      timestamp=int(token[2:12])
+                      time_local = time.localtime(timestamp)
+                      dt = str(time.strftime("%Y-%m-%d %H:%M:%S",time_local))
+    #                  print "完成时间显示 转换前：%s,转换后：%s"%(obj7,dt)
+                   if obj7 =='None' and obj6 !='None': ##获取完成时间并且把时间戳格式化成date
+                      token=str(re.findall(r'\d+\.?\d',obj6,re.S)) 
+                      timestamp=int(token[2:12])
+                      time_local = time.localtime(timestamp)
+                      dt = str(time.strftime("%Y-%m-%d %H:%M:%S",time_local))
+    #                  print "创建时间显示 转换前：%s,转换后：%s"%(obj6,d
+                   if "（线上）" in obj34:
+                       is_miss=1
+                   else:
+                       is_miss=0
+                   if ")" in obj34:
+                       bugname1=obj34.split(")")
+                       title1=bugname1[0].split("(")
+                       title=title1[1]
+                       bugname2=bugname1[1].split("(")
+                       bugname=bugname2[0]
+                   elif "）" in obj34:
+                       bugname1=obj34.split("）")
+    #                   title1=bugname1[0].split("(")
+    #                   title=title1[0]
+                       bugname2=bugname1[1].split("(")
+                       bugname=bugname2[0]
+                   elif "】" in obj34:
+                       bugname1=obj34.split("】")
+    #                   title1=bugname1[0].split("(")
+    #                   title=title1[0]
+                       bugname2=bugname1[1].split("(")
+                       bugname=bugname2[0] 
+                   else:
+                       bugname=obj34
+    #               print "#############################"
+    #               print obj34
+    #               print "#############################"
+    #               print bugname
+    #               print objectid3[0],bugname,objectid3[1],dt,c_user],ob38[1],sub_type,is_miss
+                   cn=db.bug_sel(objectid3[0],objectid3[1])
+    #               print cn
+                   cn=int(cn[0])
+                   if cn == 0:
+    #                   print objectid3[0],objectid3[4],objectid3[1],dt,c_user,ob38[1],sub_type,is_miss
+    #                   tt=title[0]
+    #                    print type(bugname2)
+    #                    print obj34,bugname
+    #                    print title
+                        print objectid3[0],bugname,objectid3[1],dt,c_user,ob38[1],sub_type,is_miss,title
+    #                    sub_type=basic_data.basic_project(title)
+    #                    db.bug_save(objectid3[0],bugname,objectid3[1],dt,c_user,ob38[1],sub_type,is_miss,title)
 
-    dt=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
-    if "itemSource" in dict1.keys():
-#        global ob38
-        objectid=dict1["itemSource"]
-        objectid1=objectid["payload"]
-        objectid2=objectid1["rows"]
-        cn1=len(objectid2)
-        db=db_mysql.dbmysql()
-#        dt=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
-#        oj33="暂无"
-        for j in range(cn1):
-            objectid3=objectid2[j]            
-            if objectid3[5] == "Bug":
-#               print("-----------------------------------------------------")
-#               print objectid3[0] #BUGID
-#               print objectid3[4] #bugname
-#               print objectid3[1] #bugstatus
-#               print objectid3[7] #完成时间
-#               print objectid3[3] #完成人
-#               print objectid3[2] #父目录
-#               print objectid3[8] #子目录
-#               print objectid3[6] #创建时间
-               ob38=objectid3[8].split("\\")
-               obj7=str(objectid3[7])
-               obj6=str(objectid3[6])
-               obj34=objectid3[4].encode("utf-8")
-               sub_type=basic_data.basic_project(obj34)
-#               print ob38[1]
-#               print sub_type
-               if obj7 !='None': ##获取完成时间并且把时间戳格式化成date
-                  token=str(re.findall(r'\d+\.?\d',obj7,re.S)) 
-                  timestamp=int(token[2:12])
-                  time_local = time.localtime(timestamp)
-                  dt = str(time.strftime("%Y-%m-%d %H:%M:%S",time_local))
-#                  print "完成时间显示 转换前：%s,转换后：%s"%(obj7,dt)
-               if obj7 =='None' and obj6 !='None': ##获取完成时间并且把时间戳格式化成date
-                  token=str(re.findall(r'\d+\.?\d',obj6,re.S)) 
-                  timestamp=int(token[2:12])
-                  time_local = time.localtime(timestamp)
-                  dt = str(time.strftime("%Y-%m-%d %H:%M:%S",time_local))
-#                  print "创建时间显示 转换前：%s,转换后：%s"%(obj6,d
-               if "（线上）" in obj34:
-                   is_miss=1
-               else:
-                   is_miss=0
-               if ")" in obj34:
-                   bugname1=obj34.split(")")
-                   bugname2=bugname1[1].split("(")
-                   bugname=bugname2[0]
-               elif "）" in obj34:
-                   bugname1=obj34.split("）")
-                   bugname2=bugname1[1].split("(")
-                   bugname=bugname2[0]
-               elif "】" in obj34:
-                   bugname1=obj34.split("】")
-                   bugname2=bugname1[1].split("(")
-                   bugname=bugname2[0] 
-               else:
-                   bugname=obj34
-#               print "#############################"
-#               print obj34
-#               print "#############################"
-#               print bugname
-#               print objectid3[0],bugname,objectid3[1],dt,objectid3[3],ob38[1],sub_type,is_miss
-               cn=db.bug_sel(objectid3[0],objectid3[1])
-               cn=int(cn[0])
-               if cn == 0:
-#                   print objectid3[0],objectid3[4],objectid3[1],dt,objectid3[3],ob38[1],sub_type,is_miss
-                   db.bug_save(objectid3[0],bugname,objectid3[1],dt,objectid3[3],ob38[1],sub_type,is_miss)
-
-
+    except UnboundLocalError,e:
+            print e        
 def day_bug_level(date):
     db=db_mysql.dbmysql()
     bug_level=db.bug_levelwords_sel()
@@ -160,40 +183,58 @@ def day_bug_level(date):
         db.buglevel_update(object_id,level_id,level_word,date)
 
 def zentao_get_message(date):
-    db1=chandao_mysql.zd_dbmysql()
-    db=db_mysql.dbmysql()
-    bug_list=db1.bug_sel(date)
-    print bug_list
-    sub_type=25
-    type='应用中心系统'
-    for i in range(len(bug_list)):
-        print bug_list[i][0],bug_list[i][1],bug_list[i][2],bug_list[i][3],bug_list[i][4]
-        print "##################################################"
-        if   bug_list[i][2]=='active':
-             bug_status='新建'
-        if   bug_list[i][2]=='resolved':
-             bug_status='已提交'
-        if   bug_list[i][2]=='closed':
-             bug_status='完成'
-        date=str(bug_list[i][3])
-        cn=db.bug_sel_tandao(bug_list[i][0],bug_status,sub_type,date)
-        cn=int(cn[0])
-        if cn == 0:
-           bug_name=bug_list[i][1].encode('utf-8')
-           if "（线上）" in bug_name:
-                   is_miss=1
-           else:
-                   is_miss=0
-#           date=str(bug_list[i][3])
-           user_name=bug_list[i][4].encode('utf-8')
-#           print bug_list[i][0],bug_name,bug_status,date,user_name,type,sub_type,is_miss
-           db.bug_save(bug_list[i][0],bug_name,bug_status,date,user_name,type,sub_type,is_miss)                      
+    try:
+        db1=chandao_mysql.zd_dbmysql()
+        db=db_mysql.dbmysql()
+        bug_list=db1.bug_sel(date)
+        print bug_list
+        sub_type=25
+        title=''
+        type='应用中心系统'
+        for i in range(len(bug_list)):
+    #        print bug_list[i][0],bug_list[i][1],bug_list[i][2],bug_list[i][3],bug_list[i][4]
+            print "##################################################"
+            if   bug_list[i][2]=='active':
+                 bug_status='新建'
+            if   bug_list[i][2]=='resolved':
+                 bug_status='已提交'
+            if   bug_list[i][2]=='closed':
+                 bug_status='完成'
+            date=str(bug_list[i][3])
+            cn=db.bug_sel_tandao(bug_list[i][0],bug_status,sub_type,date)
+            cn=int(cn[0])
+            if cn == 0:
+               bug_name=bug_list[i][1].encode('utf-8')
+               if "（线上）" in bug_name:
+                       is_miss=1
+               else:
+                       is_miss=0
+    #           date=str(bug_list[i][3])
+               if bug_status=='新建':
+                    user_name=bug_list[i][5].encode('utf-8')
+                    date1=bug_list[i][7]
+               elif bug_status=='已提交':
+                    user_name=bug_list[i][4].encode('utf-8')
+                    date1=bug_list[i][8]
+    
+               elif bug_status=='完成':
+                    user_name=bug_list[i][6].encode('utf-8')
+                    date1=bug_list[i][9]
+               else:
+                    user_name=''
+                    date1=date
+               print bug_list[i][0],bug_name,bug_status,date1,user_name,type,sub_type,is_miss
+               db.bug_save(bug_list[i][0],bug_name,bug_status,date1,user_name,type,sub_type,is_miss,title)   
+    except UnboundLocalError,e:
+            print e                   
 if __name__ == '__main__':
 #    date=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
-    date=(datetime.datetime.now()+datetime.timedelta(days=-1)).strftime("%Y-%m-%d %H:%M:%S")
-    print date
-#    print date
-    date='2018-06-27 01:06:37'
-##    get_message()
-    zentao_get_message(date)
-#    day_bug_level(date)
+        date=(datetime.datetime.now()+datetime.timedelta(days=-1)).strftime("%Y-%m-%d %H:%M:%S")
+        print date
+    #    print date
+        date='2018-06-27 01:06:37'
+    #    get_message()
+        zentao_get_message(date)
+    #    day_bug_level(date)
+
+        

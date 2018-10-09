@@ -153,6 +153,69 @@ class dbmysql(object):
         return results
         cursor.close()
         conn.close() 
+    def bug_objectid_sel(self,objectid,startdate,enddate):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select count(*) from bug where sub_type=%s and date >=%s and date < %s and bug_status='新建'"
+        cursor.execute(sql,(objectid,startdate,enddate))
+        results = cursor.fetchone()
+        return results
+        cursor.close()
+        conn.close()
+    def object_id_sel(self):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select object_id from object_name "
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        return results
+        cursor.close()
+        conn.close()
+    def object_name_sel(self,objectid):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select object_name from object_name where object_id='"+objectid+"'"
+        cursor.execute(sql)
+        results = cursor.fetchone()
+        return results
+        cursor.close()
+        conn.close()
+    def project_stat_save(self,project_name,object_id,start_date,status):
+        #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "INSERT into project_statistics (project_name,object_id,startdate,status)VALUES (%s,%s,%s,%s)"
+        cursor.execute(sql,(project_name,object_id,start_date,status))
+        conn.commit()
+        cursor.close()
+        conn.close()
+    def project_stat_sel(self,object_id,status):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select count(*),startdate from project_statistics where object_id=%s and status=%s"
+        cursor.execute(sql,(object_id,status))
+        results = cursor.fetchone()
+        return results
+        cursor.close()
+        conn.close()
+    def project_stat_update(self,total,jk_total,enddate,status1,object_id,status):            
+        #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "update project_statistics set bug_count=%s,commit_count=%s,enddate=%s,status=%s where object_id=%s and status=%s "
+        cursor.execute(sql,(total,jk_total,enddate,status1,object_id,status))
+        conn.commit()
+        cursor.close()
+        conn.close()
+    def jenkins_source_sel(self,objectid,startdate,enddate):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select count(DISTINCT commitcode) from jenkins_source where object_id=%s and date >=%s and date < %s"
+        cursor.execute(sql,(objectid,startdate,enddate))
+        results = cursor.fetchone()
+        return results
+        cursor.close()
+        conn.close()
 #res=dbmysql().bug_sel_bugid("1","2017-09-13","接口")
 #if res != ():
 #    print res
