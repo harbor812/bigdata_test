@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'passport.spiders'
 
 # 设置item——pipelines
 ITEM_PIPELINES = {
-    'webspider.pipelines.passportPipeline': 300,
+    'passport.pipelines.passportPipeline': 300,
 }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -24,6 +24,12 @@ ITEM_PIPELINES = {
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
+
+
+MYSQL_HOST = 'localhost'
+MYSQL_DBNAME = 'douban'
+MYSQL_USER = 'root'
+MYSQL_PASSWD = '123456'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
