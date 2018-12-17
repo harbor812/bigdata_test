@@ -188,10 +188,14 @@ def zentao_get_message(date):
         db=db_mysql.dbmysql()
         bug_list=db1.bug_sel(date)
         print bug_list
-        sub_type=25
+        sub_type=99
         title=''
         type='应用中心系统'
-        for i in range(len(bug_list)):
+        for i in range(len(bug_list)):            
+            if   bug_list[i][10]==1:
+                 sub_type=25
+            if   bug_list[i][10]==3:
+                 sub_type=26
     #        print bug_list[i][0],bug_list[i][1],bug_list[i][2],bug_list[i][3],bug_list[i][4]
             print "##################################################"
             if   bug_list[i][2]=='active':

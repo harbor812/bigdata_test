@@ -36,6 +36,16 @@ class PswordSpider(scrapy.Spider):
 
 
     def parser(self, response):
+#        fp=open("D:\\git\\bigdata_test\\webspider\\passport\\passport\\test.txt",'r')
+#        sentences=fp.readlines()
+#        print "#########sentences##################"
+#
+##        for i in range(len(sentences)):
+#        st=str(sentences[0]).replace('\n','')
+#        st=st.split(',')
+#        
+#        print st[0]
+#        print st[1]
         data={
               'username':'13818121262',
               'countryCode':'86',
@@ -45,9 +55,11 @@ class PswordSpider(scrapy.Spider):
               'homepage_params':'[]'
               }
 
-        Cookie1 = response.headers.getlist('Set-Cookie')   #查看一下响应Cookie，也就是第一次访问注册页面时后台写入浏览器的Cookie
-        print "########Cookie1########################"
-        print Cookie1
+#            Cookie1 = response.headers.getlist('Set-Cookie')   #查看一下响应Cookie，也就是第一次访问注册页面时后台写入浏览器的Cookie
+        print "########data########################"
+        print data
+#            print "########Cookie1########################"
+#            print Cookie1
         return [FormRequest.from_response(response,
                                           url='https://passport.xiaohulu.com/login',   #真实post地址
                                           meta={'cookiejar':response.meta['cookiejar']},

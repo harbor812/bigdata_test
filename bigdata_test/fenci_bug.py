@@ -25,11 +25,12 @@ if __name__ == '__main__':
      date = datetime.date.today() 
      yesterday = date - datetime.timedelta(days=1)
 #     print date,yesterday
-     date='2018-04-12'
+     date='2018-04-01'
      subtype=db.bug_sel_subtype(date)
      subtype_cn=len(subtype)
      i=0
      x=0
+     j=0
      try:
          for i in range(subtype_cn):
              #获取commitcode 对应的bugname
@@ -38,7 +39,7 @@ if __name__ == '__main__':
              #bugname 不为空 做词频统计和排序
              if res != ():
     #              print (res)
-#                  print "#####################################################"
+    #                  print "#####################################################"
                   if ')' in res:
                       i=res.split(")")
                       res=i[1].encode('utf-8')
@@ -47,6 +48,7 @@ if __name__ == '__main__':
                       res=i[1].encode('utf-8')
     #              print res
                   strs=str(res).decode("unicode-escape")
+    #                  strs=str(res)
                   dicts=cs.cut_sentence(strs)
                   sort_dict=sorted(dicts.iteritems(),key=lambda d:d[1],reverse=True)
                   key_dict=json.dumps(sort_dict,encoding="utf-8",ensure_ascii=False)
@@ -61,22 +63,35 @@ if __name__ == '__main__':
                       if dt[1] != '':
                          #转译词频词并且去除空格
                          kw=dt[0].encode('utf-8').strip()
+    #                         kw=dt[0]
                          if kw !='\\':
                              bugid=db.bug_sel_bugid_daykeyword(subtype[i],date,kw)
+                             sub_type=str(subtype[i]).replace("(","").replace(",)","").replace("u","").replace("'","").replace(")","")
+                             ob_id1=db.main_object_id_sel(sub_type)
+                             ob_id=ob_id1[0]
+    #                             print ob_id1
                              bugid=str(bugid).replace("(","").replace(",)","").replace("u","").replace("'","").replace(")","")
-    #                     print date,subtype[i],kw,dt[1],date1,bugid
+    #                         ob_id=ob_id1[0]
+    #                         print "##########################"
+    #                         print sub_type
+    #                         print ob_id1[0]
+                         print date,ob_id,kw,dt[1],date1,bugid
+#                  j=x+x
+#                  
+#         print "======================================================"
+#         print j
 #                         print kw,dt[1]
-                             db.bug_keyword_save(date,subtype[i],kw,dt[1],date1,bugid)                    
-    #                     print kw
-    #                     time.sleep(1)
-                             if dt[1] > 1:
-                                 kwcount=db.levelwords_count(kw)
-                                 kwcount=kwcount[0]
-        #                     print kwcount
-                             #如果bug_levelwords 表没有 就插入
-                                 if kwcount ==0:
-                                     db.levelwords_insert(kw,'1')
-                             db.bug_keyword_del()
+#                             db.bug_keyword_save(date,subtype[i],kw,dt[1],date1,bugid)                    
+#    #                     print kw
+#    #                     time.sleep(1)
+#                             if dt[1] > 1:
+#                                 kwcount=db.levelwords_count(kw)
+#                                 kwcount=kwcount[0]
+#        #                     print kwcount
+#                             #如果bug_levelwords 表没有 就插入
+#                                 if kwcount ==0:
+#                                     db.levelwords_insert(kw,'1')
+#                             db.bug_keyword_del()
      except Exception,e:
          print e.message
                               

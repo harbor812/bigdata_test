@@ -19,7 +19,7 @@ class zd_dbmysql(object):
     def bug_sel(self,date):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "select id,title,status,assignedDate,resolvedBy,openedBy,closedBy,openedDate,resolvedDate,closedDate from zt_bug where assignedDate >='"+date+"'"
+        sql = "select id,title,status,assignedDate,resolvedBy,openedBy,closedBy,openedDate,resolvedDate,closedDate,product from zt_bug where assignedDate >='"+date+"'"
         cursor.execute(sql)
         results = cursor.fetchall()
         return results

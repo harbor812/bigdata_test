@@ -25,12 +25,6 @@ ITEM_PIPELINES = {
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
-
-MYSQL_HOST = 'localhost'
-MYSQL_DBNAME = 'douban'
-MYSQL_USER = 'root'
-MYSQL_PASSWD = '123456'
-
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 

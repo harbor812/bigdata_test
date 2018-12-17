@@ -76,7 +76,7 @@ def similarity(db,keywords):
     for i in range(sentlen):
         sent=sentences1[i][0]
         if keywords1 != sent:
-            sim1=synonyms.compare(keywords1, sent, seg=True)
+            sim1=synonyms.compare(keywords1, sent, seg=False)
             if sim1 > sim2:
                 sim2 =sim1
                 sent1=sent

@@ -113,7 +113,7 @@ class dbmysql(object):
     def bug_sel_bugid_daykeyword(self,object_id,date,keyword):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "select bug_id from bug where sub_type=%s and date >=%s and bug_status='完成' and bug_name like '%%"+keyword+"%%'"
+        sql = "select bug_id from bug where sub_type=%s and date >=%s and bug_status='新建' and bug_name like '%%"+keyword+"%%'"
         cursor.execute(sql,(object_id,date))
         results = cursor.fetchall()
         return results
@@ -281,6 +281,40 @@ class dbmysql(object):
         cursor.execute(sql)
         results = cursor.fetchone()
         return results
+        cursor.close()
+        conn.close()
+    def main_object_id_sel(self,objectid):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select main_object_id from object_name where object_id='"+objectid+"'"
+        cursor.execute(sql)
+        results = cursor.fetchone()
+        return results
+        cursor.close()
+        conn.close()
+    def change_name_sel(self,startdate,enddate):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select DISTINCT change_name,object_id from jenkins_source where date >=%s and date < %s"
+        cursor.execute(sql,(startdate,enddate))
+        results = cursor.fetchall()
+        return results
+        cursor.close()
+        conn.close()
+    def change_comment_insert(self,changename,object_id,comment):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "INSERT into changename_comment (changename,object_id,comment)VALUES (%s,%s,%s)"
+        cursor.execute(sql,(changename,object_id,comment))
+        conn.commit()
+        cursor.close()
+        conn.close()
+    def change_comment_del(self,changename,object_id):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "delete from changename_comment where changename=%s and object_id=%s"
+        cursor.execute(sql,(changename,object_id))
+        conn.commit()
         cursor.close()
         conn.close()
 #res=dbmysql().bug_sel_subtype("2017-09-13")

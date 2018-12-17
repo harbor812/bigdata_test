@@ -19,7 +19,7 @@ class dbmysql(object):
     def fx_sel_bug(self,date):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "select bug_id,bug_status,sub_type,date from bug where date >='"+date+"'"
+        sql = "select bug_id,bug_status,sub_type,date,bug_name,tag_name,level_id from bug where date >='"+date+"'"
         cursor.execute(sql)
         results = cursor.fetchall()
         return results
@@ -210,8 +210,44 @@ class dbmysql(object):
     def jenkins_source_sel(self,objectid,startdate,enddate):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "select count(DISTINCT commitcode) from jenkins_source where object_id=%s and date >=%s and date < %s"
+        sql = "select count(DISTINCT commitcode) from jenkins_source where object_id in (select object_id from object_name where main_object_id=%s) and date >=%s and date < %s"
         cursor.execute(sql,(objectid,startdate,enddate))
+        results = cursor.fetchone()
+        return results
+        cursor.close()
+        conn.close()
+    def main_object_id_sel(self,objectid):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select main_object_id from object_name where object_id='"+objectid+"'"
+        cursor.execute(sql)
+        results = cursor.fetchone()
+        return results
+        cursor.close()
+        conn.close()
+    def change_comment_sel(self,date):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select changename,object_id,comment from changename_comment where date >='"+date+"'"
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        return results
+        cursor.close()
+        conn.close()
+    def changename_bugid_save(self,changename,ob_id,comment,bug_id_list,date):
+        #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "INSERT into changename_bugid (changename,object_id,comment,bug_id,date)VALUES (%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(changename,ob_id,comment,bug_id_list,date))
+        conn.commit()
+        cursor.close()
+        conn.close()
+    def changename_bugid_sel(self,changename,ob_id,date):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select GROUP_CONCAT(DISTINCT bug_id) from changename_bugid where bug_id !='' and changename=%s and object_id=%s and date >=%s"
+        cursor.execute(sql,(changename,ob_id,date))
         results = cursor.fetchone()
         return results
         cursor.close()
