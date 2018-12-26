@@ -208,11 +208,31 @@ def zentao_get_message(date):
             cn=db.bug_sel_tandao(bug_list[i][0],bug_status,sub_type,date)
             cn=int(cn[0])
             if cn == 0:
-               bug_name=bug_list[i][1].encode('utf-8')
-               if "（线上）" in bug_name:
+               obj34=bug_list[i][1].encode('utf-8')
+               if "（线上）" in obj34:
                        is_miss=1
                else:
                        is_miss=0
+            if ")" in obj34:
+               bugname1=obj34.split(")")
+               title1=bugname1[0].split("(")
+               title=title1[1]
+               bugname2=bugname1[1].split("(")
+               bugname=bugname2[0]
+            elif "）" in obj34:
+               bugname1=obj34.split("）")
+#                   title1=bugname1[0].split("(")
+#                   title=title1[0]
+               bugname2=bugname1[1].split("(")
+               bugname=bugname2[0]
+            elif "】" in obj34:
+               bugname1=obj34.split("】")
+#                   title1=bugname1[0].split("(")
+#                   title=title1[0]
+               bugname2=bugname1[1].split("(")
+               bugname=bugname2[0] 
+            else:
+               bugname=obj34
     #           date=str(bug_list[i][3])
                if bug_status=='新建':
                     user_name=bug_list[i][5].encode('utf-8')
@@ -227,8 +247,8 @@ def zentao_get_message(date):
                else:
                     user_name=''
                     date1=date
-               print bug_list[i][0],bug_name,bug_status,date1,user_name,type,sub_type,is_miss
-               db.bug_save(bug_list[i][0],bug_name,bug_status,date1,user_name,type,sub_type,is_miss,title)   
+               print bug_list[i][0],bugname,bug_status,date1,user_name,type,sub_type,is_miss
+               db.bug_save(bug_list[i][0],bugname,bug_status,date1,user_name,type,sub_type,is_miss,title)   
     except UnboundLocalError,e:
             print e                   
 if __name__ == '__main__':
