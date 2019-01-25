@@ -301,11 +301,11 @@ class dbmysql(object):
         return results
         cursor.close()
         conn.close()
-    def change_comment_insert(self,changename,object_id,comment):
+    def change_comment_insert(self,changename,object_id,comment,date,line_num,com_type):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "INSERT into changename_comment (changename,object_id,comment)VALUES (%s,%s,%s)"
-        cursor.execute(sql,(changename,object_id,comment))
+        sql = "INSERT into changename_comment (changename,object_id,comment,date,line_num,com_type)VALUES (%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(changename,object_id,comment,date,line_num,com_type))
         conn.commit()
         cursor.close()
         conn.close()

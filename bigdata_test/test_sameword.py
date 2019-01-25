@@ -49,8 +49,8 @@ import synonyms
 
 
 ###########################synonyms
-comment='getQuestionCount'
-bug_name='小程序apiquestionReplyaddComment传参错误'
+comment='getPostList'
+bug_name='接口apipostgetPostCommentList应该去的身份验证'
 print synonyms.compare(comment, bug_name, seg=False)
 print len(comment),len(bug_name)
 #str1="接口 报错  /api/user /userUnBindPlat"

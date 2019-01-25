@@ -641,14 +641,14 @@ def project_stat():
                 if status ==0:
                     bugcn=td-zt
                     if bugcn >= 1:
-			obname=db.object_name_sel(obid) 
+                        obname=db.object_name_sel(obid) 
                         proname=obname[0]+str(date)
                         db.project_stat_save(proname,obid,date,'0')
             #            print obname[0],bugcn
             #今天无bug         
             else:
                 #项目进行中
-                if status == 1:                    
+                if status == 1:
                     if zt ==0:
                         total=int(db.bug_objectid_sel(obid,stardate,date1)[0])
                         jk_total=int(db.jenkins_source_sel(obid,stardate,date1)[0])
@@ -680,10 +680,13 @@ def day_changename_comment_stat(date):
         for j in range(len(com_list)):
              if com_list[j][0] == changename and com_list[j][1] == ob_id:
                  comment=com_list[j][2]
+                 line_num=com_list[j][4]
+                 com_type=com_list[j][5]
                  bug_id_list1=[]
-                 sim2=0.6
+#                 sim2=0.6
                  for x in range(len(bugname_list)):
-                     if bugname_list[x][1] == '新建' and bugname_list[x][5] !=None:
+                     sim2=0.6
+                     if bugname_list[x][1] == '新建' and bugname_list[x][5] !=None and bugname_list[x][2] == com_list[j][3]:
                          if bugname_list[x][6] !='4' and '前端' not in bugname_list[x][5]:
 #                            if '接口' in bugname_list[x][5]:
 #                                sim2=0.8
@@ -699,14 +702,14 @@ def day_changename_comment_stat(date):
                             if tol_cn > 0 and tol_cn <=cm_cn:
                                 sim2=0.8
                             if tol_cn > cm_cn and tol_cn <=cm_cn * 2:
-                                sim2=0.7
+                                sim2=0.6
                             if tol_cn > cm_cn * 2 and tol_cn <=cm_cn * 3:
                                 sim2=0.5 
                             if tol_cn > cm_cn * 3 and tol_cn <=cm_cn * 4:
-                                sim2=0.4 
+                                sim2=0.45 
                             if tol_cn > cm_cn * 4 and tol_cn <=cm_cn * 5:
-                                sim2=0.3 
-                            print sim2,cm_cn,tol_cn,bug_id,bug_name,
+                                sim2=0.35 
+                            print sim2,cm_cn,tol_cn,bug_id,bug_name
                             print "#######################################"
 #                            print comment,len(comment)
 #                            print bug_name,len(bug_name)
@@ -715,16 +718,17 @@ def day_changename_comment_stat(date):
                             if sim1 > sim2:
                                sim2 =sim1
                                bug_id_list1.append(bug_id)
-                 bug_id_list=str(bug_id_list1).replace("[","").replace("]","").replace("'","").replace("u","")
-#                 print changename,ob_id,commnet,bug_id_list
-                 db.changename_bugid_save(changename,ob_id,comment,bug_id_list,date)
+                 if len(bug_id_list1) > 0:
+                     bug_id_list=str(bug_id_list1).replace("[","").replace("]","").replace("'","").replace("u","")
+                     print changename,ob_id,comment,bug_id_list
+                     db.changename_bugid_save(changename,ob_id,comment,bug_id_list,date,line_num,com_type)
               
 if __name__ == '__main__':
    starttime=datetime.datetime.now()
    date = datetime.date.today()
    date = str(date)
     #print date
-   date='2018-01-27'
+   date='2018-08-01'
 #   print "--day_bug_level----开始时间--------------",starttime,"---------------------------------"
 #   date1=(datetime.datetime.now()+datetime.timedelta(days=-30)).strftime("%Y-%m-%d")
 #   day_bug_level(date1)

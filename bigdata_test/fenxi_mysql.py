@@ -228,18 +228,18 @@ class dbmysql(object):
     def change_comment_sel(self,date):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "select changename,object_id,comment from changename_comment where date >='"+date+"'"
+        sql = "select changename,cc.object_id,comment,obn.main_object_id,cc.line_num,com_type from changename_comment  cc,object_name obn where cc.date >='"+date+"' and cc.object_id=obn.object_id"
         cursor.execute(sql)
         results = cursor.fetchall()
         return results
         cursor.close()
         conn.close()
-    def changename_bugid_save(self,changename,ob_id,comment,bug_id_list,date):
+    def changename_bugid_save(self,changename,ob_id,comment,bug_id_list,date,line_num,com_type):
         #print change_name,object_id,starttime,endtime,new_bug_count,fix_bug_count,close_bug_count,create_date
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "INSERT into changename_bugid (changename,object_id,comment,bug_id,date)VALUES (%s,%s,%s,%s,%s)"
-        cursor.execute(sql,(changename,ob_id,comment,bug_id_list,date))
+        sql = "INSERT into changename_bugid (changename,object_id,comment,bug_id,date,line_num,com_type)VALUES (%s,%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(changename,ob_id,comment,bug_id_list,date,line_num,com_type))
         conn.commit()
         cursor.close()
         conn.close()
