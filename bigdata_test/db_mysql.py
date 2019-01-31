@@ -301,11 +301,11 @@ class dbmysql(object):
         return results
         cursor.close()
         conn.close()
-    def change_comment_insert(self,changename,object_id,comment,date,line_num,com_type):
+    def change_comment_insert(self,changename,object_id,comment,date,line_num,com_type,if_cn,for_cn,switch_cn,while_cn):
         conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
         cursor=conn.cursor()          #定义连接对象
-        sql = "INSERT into changename_comment (changename,object_id,comment,date,line_num,com_type)VALUES (%s,%s,%s,%s,%s,%s)"
-        cursor.execute(sql,(changename,object_id,comment,date,line_num,com_type))
+        sql = "INSERT into changename_comment (changename,object_id,comment,date,line_num,com_type,if_cn,for_cn,switch_cn,while_cn)VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(changename,object_id,comment,date,line_num,com_type,if_cn,for_cn,switch_cn,while_cn))
         conn.commit()
         cursor.close()
         conn.close()
@@ -317,6 +317,33 @@ class dbmysql(object):
         conn.commit()
         cursor.close()
         conn.close()
+    def change_comment_limit(self,objectid,changename,line_num):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select comment,line_num from changename_comment where object_id=%s and changename=%s and line_num <=%s and com_type=1 ORDER BY line_num desc LIMIT 1"
+        cursor.execute(sql,(objectid,changename,line_num))
+        results = cursor.fetchone()
+        return results
+        cursor.close()
+        conn.close()
+    def change_bugid_limit(self,objectid,changename,line_num):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select comment,line_num from changename_bugid where object_id=%s and changename=%s and line_num <=%s and com_type=1 ORDER BY line_num desc LIMIT 1"
+        cursor.execute(sql,(objectid,changename,line_num))
+        results = cursor.fetchone()
+        return results
+        cursor.close()
+        conn.close()
+    def change_function_insert(self,commitcode,objectid,changename,cs_num_del,cs_del_comment,cs_del_line_num,cs_num_add,cs_add_comment,cs_add_line_num,starttime):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "INSERT into changename_funciton (commitcode,object_id,change_name,line_del,del_comment,del_comment_line,line_add,add_comment,add_comment_line,date)VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+        cursor.execute(sql,(commitcode,objectid,changename,cs_num_del,cs_del_comment,cs_del_line_num,cs_num_add,cs_add_comment,cs_add_line_num,starttime))
+        conn.commit()
+        cursor.close()
+        conn.close()
+
 #res=dbmysql().bug_sel_subtype("2017-09-13")
 #if res != ():
 #    print res[2]

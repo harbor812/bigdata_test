@@ -49,8 +49,8 @@ import synonyms
 
 
 ###########################synonyms
-comment='getPostList'
-bug_name='接口apipostgetPostCommentList应该去的身份验证'
+comment='postList'
+bug_name='接口apipostpostList报错：Messageunserialize'
 print synonyms.compare(comment, bug_name, seg=False)
 print len(comment),len(bug_name)
 #str1="接口 报错  /api/user /userUnBindPlat"

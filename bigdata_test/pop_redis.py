@@ -12,6 +12,7 @@ import logging
 #import basic_data
 import datetime
 import configparser  #ini配置文件
+import get_php_comment
 
 
 
@@ -90,6 +91,8 @@ def pop_redis(ip,port,key):
                        message=date1+",近90天bug严重的程序-子项目名称："+objectid1+"-程序名："+name1+"- 有更新,"+url
                        logging.info(message)
                     t=t+1
+            if i >= 1:
+                get_php_comment.get_php().run_get()
     except :
         error_message=objectid + date[0]+ name1+ commitcode
         logging.error(error_message)         

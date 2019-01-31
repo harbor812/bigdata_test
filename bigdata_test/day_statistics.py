@@ -656,12 +656,12 @@ def project_stat():
                         print "如果项目进行中，今天无bug,更改项目状态为：结束"
                 print obid
                 print td,zt,qt
-def day_changename_comment_stat(date):
+def day_changename_comment_stat(date,date1):
     db=fenxi_mysql.dbmysql()
     ##获取代码注释内容
     com_list=db.change_comment_sel(date)
     ##获取bug信息
-    bugname_list=db.fx_sel_bug(date)
+    bugname_list=db.fx_sel_bug(date1)
     change_name=[]
     object_id=[]
 #    bug_name1=''
@@ -726,16 +726,20 @@ def day_changename_comment_stat(date):
 if __name__ == '__main__':
    starttime=datetime.datetime.now()
    date = datetime.date.today()
+   date1 = str(datetime.date.today()+datetime.timedelta(days=-1))
+
    date = str(date)
+   
+   print date,date1
     #print date
-   date='2018-08-01'
+#   date='2018-08-01'
 #   print "--day_bug_level----开始时间--------------",starttime,"---------------------------------"
 #   date1=(datetime.datetime.now()+datetime.timedelta(days=-30)).strftime("%Y-%m-%d")
 #   day_bug_level(date1)
 #   print "--project_stat----开始时间--------------",starttime,"---------------------------------"
 #   project_stat()
    print "--day_changename_comment_stat----开始时间--------------",starttime,"---------------------------------"
-   day_changename_comment_stat(date)
+   day_changename_comment_stat(date,date1)
 #   print "---day_commitcode---开始时间--------------",starttime,"---------------------------------"
 #   day_commitcode(date)
 #   starttime1=datetime.datetime.now()
