@@ -19,18 +19,14 @@ def wordresult(db):
     bugname=bugname.replace(")","").encode('utf-8')
     
     with open("wordresult.txt","w") as f:
+         f.truncate() #清空数据
          f.write(bugname)
 
 
 def similarity(db,keywords):
     fp=open("D:\\git\\bigdata_test\\bigdata_test\\wordresult.txt",'r')
     sentences=fp.readlines()
-    st=sentences[0].split(',')
-#    print "###################################"
-#    #
-##    print st
-#    print "###################################"
-    
+    st=sentences[0].split(',')    
     st_list=[] #  词库列表
     keywords1=0   #最接近的词
 #    sim=0.01   #相似度

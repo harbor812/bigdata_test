@@ -7,12 +7,14 @@ Created on Wed Nov 21 17:27:28 2018
 
 import paramiko
 import datetime
-import db_mysql
+import db_mysql,db_redis
+import json
 
 
 class get_php(object):
     
     db=db_mysql.dbmysql()
+    dbr=db_redis.dbredis()
     
     def exec_command(self,comm):
     #    starttime = datetime.datetime.now()
@@ -128,7 +130,7 @@ class get_php(object):
     #            print comm,comm1,ob_id
     #            db.change_comment_insert(comm,ob_id,comm1,date,i)
     def run_get(self):
-        starttime = datetime.datetime.now()+datetime.timedelta(seconds=-300)
+        starttime = datetime.datetime.now()+datetime.timedelta(seconds=-60)
         starttime = starttime.strftime("%Y-%m-%d %H:%M:%S")
         
         endtime=datetime.datetime.now()+datetime.timedelta(days=1)
@@ -148,7 +150,7 @@ class get_php(object):
                 self.to_mysql(comm,ob_id,comm1,starttime)
                 
     def change_function(self):
-        starttime = datetime.datetime.now()+datetime.timedelta(seconds=-300)
+        starttime = datetime.datetime.now()+datetime.timedelta(seconds=-120)
         starttime = starttime.strftime("%Y-%m-%d %H:%M:%S")
 
     
@@ -210,10 +212,44 @@ class get_php(object):
 #                     print "___"+cs_num[0],cs_num1[0]
                   
     #    print jk_source
+    def change_deladd(self):
+        starttime = datetime.datetime.now()+datetime.timedelta(seconds=-180)
+        starttime = starttime.strftime("%Y-%m-%d %H:%M:%S")
+
+        starttime ='2019-01-17 16:16:08'
+        change_fun=self.db.change_funciotn_sel(starttime)
+#        print change_fun
+        cn=len(change_fun)
+        i=0
+        json_1={}
+#        json_2={}
+
+        for i in range(cn):
+            change_name=change_fun[i][1].split('file:')
+            change_name=change_name[1].split('.php')
+#            j=","
+            if change_fun[i][2] !='0':
+                json_1.setdefault("ob_id",[]).append(change_fun[i][0])
+                json_1.setdefault("change_name",[]).append(change_name[0])
+                json_1.setdefault("comment",[]).append(change_fun[i][2])
+#                json_1="{"+"ob_id:" +change_fun[i][0]+", change_name:"+change_name[1] +", comment:"+change_fun[i][2]+"}" + j + json_1
+            if change_fun[i][3] !='0':
+                json_1.setdefault("ob_id",[]).append(change_fun[i][0])
+                json_1.setdefault("change_name",[]).append(change_name[0])
+                json_1.setdefault("comment",[]).append(change_fun[i][3])
+#                json_1="{"+"ob_id:" +change_fun[i][0]+", change_name:"+change_name[1] +", comment:"+change_fun[i][3]+"}" + j + json_1
+#            print json_1
+#        json_1=json_1.replace(",","",-1)
+        if json_1 !={}:            
+            print "###############################"
+            json_1=json.dumps(json_1)
+            print json_1
+            self.dbr.push(json_1)
+
    
 if __name__ == '__main__':
     
-    get_php().change_function()
+    get_php().change_deladd()
 #    db=db_mysql.dbmysql()
 #    starttime = datetime.datetime.now()+datetime.timedelta(seconds=-300)
 #    starttime = starttime.strftime("%Y-%m-%d %H:%M:%S")

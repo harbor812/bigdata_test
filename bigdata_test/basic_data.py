@@ -47,14 +47,25 @@ def basic_project(name):
             return 20
         if "范特西" in name:
             return 18
-        if "小葫芦星球appIOS" in name:
-            return 22
-        if "小葫芦星球app安卓" in name:
-            return 23
-        if "小葫芦星球" in name:
+        if "阿凡达appIOS" in name or "阿凡达appios" in name or "阿凡达appiOS" in name or "avatarappIOS" in name or "avatarappios" in name or "avatarappiOS" in name:
+            return 28
+        if "阿凡达app安卓" in name:
+            return 29
+        if "阿凡达" in name or "avatar" in name:
             return 21
+        if "IOS" in name or "ios" in name or "appiOS" in name:
+            return 22
+        if "安卓" in name:
+            return 23
+        if "小葫芦星球" in name or "兑换红包" in name or "h5直播数据" in name  or "足球" in name or "pick" in name or "小葫芦小程序" in name or "小程序主播端" in name or "小程序粉丝端" in name or "小程序星球" in name or "冲榜" in name or "时间胶囊" in name:
+            return 21
+        if "星球game" in name or "星球游戏" in name:
+            return 24
+        if "短视频" in name or "短视屏" in name:
+            return 31
         else:
             return 99
+
 
 
 def basic_project1(name): 
@@ -107,5 +118,7 @@ def basic_project1(name):
            return "其他"
 
 
-
+if __name__ == '__main__':
+    name='（小葫芦星球2.8.9安卓）首页点击榜单切换月份闪退，C位战切换也闪退'
+    print basic_project(name)
     

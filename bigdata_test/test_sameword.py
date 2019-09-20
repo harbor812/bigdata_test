@@ -49,8 +49,14 @@ import synonyms
 
 
 ###########################synonyms
-comment='postList'
-bug_name='接口apipostpostList报错：Messageunserialize'
+comment='五菱房车@抖音小助手'
+bug_name='醉过知酒浓，爱过知情重。'
+c1=0.021
+c2=0.1
+
+print type(c2)
+if c1 > c2:
+    print 'OKOKOK'
 print synonyms.compare(comment, bug_name, seg=False)
 print len(comment),len(bug_name)
 #str1="接口 报错  /api/user /userUnBindPlat"

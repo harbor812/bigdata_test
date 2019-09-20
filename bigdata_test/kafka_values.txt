@@ -1,0 +1,3 @@
+Empty DataFrame
+Columns: [cha_list, comment_count, create_time, magic_effect_name, video_id, video_share_count]
+Index: []

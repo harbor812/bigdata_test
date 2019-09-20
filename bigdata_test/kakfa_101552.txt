@@ -1,0 +1,31 @@
+start 
+start 
+start 
+start 
+start 
+start 
+              0
+price         0
+roomid  5806758
+time       None
+start 
+              0        1        2       3        4        5     6        7  \
+price         0        0        0       0        0        0     0        0   
+roomid  3567314  6721889  7266087  718133  5664904  7015652   110  3821549   
+time       None     None     None    None     None     None  None     None   
+
+            8  
+price       0  
+roomid  84452  
+time     None  
+start 
+   price   roomid
+0      0  7258132
+1      0  6596970
+2      0  5160335
+3      0  6262549
+4      0  1524424
+5      0  7198502
+6      0   135606
+7      0  2370329
+8      0  2025029

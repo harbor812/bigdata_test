@@ -450,7 +450,7 @@ def day_bug_level(date):
         level_word=bug_level[x][1].encode('utf-8')
         level_id=bug_level[x][2]
         tag_name=bug_level[x][3]
-        priority=bug_level[x][4]
+	priority=bug_level[x][4]
 #        print object_id,level_id,level_word,date
         bugid_list=db.fx_buglevel_bugid_sel(object_id,level_word,date)  
 #        print bugid_list
@@ -458,7 +458,7 @@ def day_bug_level(date):
         fx_level_id=[]
         fx_object_id=[]
         fx_bugid=[]
-        fx_priority=[]
+	fx_priority=[]
         #进行数据合并  
         for y in range(len(bugid_list)):
 #             print bugid_list[y][0]
@@ -468,8 +468,6 @@ def day_bug_level(date):
              fx_bugid.append(bugid_list[y][0])
 	     fx_priority.append(priority) 
         buglevel_data1=pd.DataFrame({'fx_tag_name':fx_tag_name,'fx_level_id':fx_level_id,'fx_object_id':fx_object_id,'fx_bugid':fx_bugid,'fx_priority':fx_priority})
-#        buglevel_data2=pd.DataFrame({'fx_tag_name':fx_tag_name,'fx_level_id':fx_level_id,'fx_level_word':level_word,'fx_bugid':fx_bugid,'fx_priority':fx_priority})
-#        print buglevel_data2
 
         frames=[buglevel_data,buglevel_data1]
         buglevel_data=pd.concat(frames)
@@ -523,59 +521,42 @@ def day_bug_level(date):
            print bugorder
 
            #对 每个bug_id 进行标签分析
-#           bug_tagname=''
-#           bug_bugid=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == levelid)  & (buglevel_data['fx_priority'] == 1)]
-#           bugid_priority_cn=bug_bugid['fx_bugid'].count()
-#           print "优先级为1的个数###############################################"
-#           print bugid_priority_cn 
-#           #tag_name 优先拿优先级高的
-#           if bugid_priority_cn > 0:
-##               print bug_bugid
-#               bug_tagname=bug_bugid.iloc[0,4]
-#               print "优先级###############################################"
-#               print bug_tagname.encode('utf-8')
-#           else:
-#               bug_bugid=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == levelid)]
-#               bugid_tagname_distinct = bug_bugid.drop_duplicates(['fx_tag_name'])
-#               bugid_tagname_cn=bugid_tagname_distinct['fx_bugid'].count()
-#               print "###########bug对应分类信息，再筛选###################################################"
-           bug_bugid=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == levelid)]
-           bugid_tagname_distinct = bug_bugid.drop_duplicates(['fx_tag_name'])
-           bugid_tagname_cn=bugid_tagname_distinct['fx_bugid'].count()
-#           print bugid_tagname_distinct
-#           print bug_bugid
-#           bug_priority_cn=''
-           bug_tagname=''
-           tagname_cn=0
-           for z in range(bugid_tagname_cn):
-                  bug_tagname1=bugid_tagname_distinct.iloc[z,4]
-#                  bug_priority=bugid_tagname_distinct.iloc[z,3]
-
-                  tagname_cn1=int(bug_bugid[(bug_bugid['fx_tag_name'] == bug_tagname1)]['fx_tag_name'].count())
-                  bug_priority=int(bug_bugid[(bug_bugid['fx_tag_name'] == bug_tagname1)]['fx_priority'].sum())
-                  print '################添加权重#####################################'
-                  if bug_priority !='':
-                      bug_priority=int(bug_priority)
-                      print bug_priority
-                      tagname_cn1=tagname_cn1+bug_priority
+	   bug_tagname=''
+           bug_bugid=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == levelid)  & (buglevel_data['fx_priority'] == 1)]
+           bugid_priority_cn=bug_bugid['fx_bugid'].count()
+           print "优先级为1的个数###############################################"
+           print bugid_priority_cn 
+           #tag_name 优先拿优先级高的
+           if bugid_priority_cn > 0:
+#               print bug_bugid
+               bug_tagname=bug_bugid.iloc[0,4]
+               print "优先级###############################################"
+               print bug_tagname.encode('utf-8')
+           else:
+               bug_bugid=buglevel_data[(buglevel_data['fx_bugid'] == bug_id) & (buglevel_data['fx_level_id'] == levelid)]
+               bugid_tagname_distinct = bug_bugid.drop_duplicates(['fx_tag_name'])
+               bugid_tagname_cn=bugid_tagname_distinct['fx_bugid'].count()
+               print "###########bug对应分类信息，再筛选###################################################"
+	       print bugid_tagname_distinct
+               tagname_cn=0
+               for z in range(bugid_tagname_cn):
+                      bug_tagname1=bugid_tagname_distinct.iloc[z,4]
+                      tagname_cn1=int(bug_bugid[(bug_bugid['fx_tag_name'] == bug_tagname1)]['fx_tag_name'].count())
+                      print bug_tagname1.encode('utf-8')
                       print tagname_cn1
-#                  
-#                   
-#                  print bug_tagname1.encode('utf-8')
-#                  print tagname_cn1
-#
-                  if tagname_cn1 > tagname_cn:
-                           bug_tagname=bug_tagname1
-                           tagname_cn=tagname_cn1
-                  if tagname_cn1 == tagname_cn  and bug_tagname != bug_tagname1:
-                           if bug_tagname =='':
+    
+                      if tagname_cn1 > tagname_cn:
                                bug_tagname=bug_tagname1
-                           else:
-                               bug_tagname='%s,%s' %(bug_tagname,bug_tagname1)
-                           tagname_cn=tagname_cn1
-#           print "#####筛选完毕#################################"                 
-#           print levelid,bug_tagname.encode('utf-8'),bug_id
-#           print "#####结束#################################"
+                               tagname_cn=tagname_cn1
+                      if tagname_cn1 == tagname_cn  and bug_tagname != bug_tagname1:
+                               if bug_tagname =='':
+                                   bug_tagname=bug_tagname1
+                               else:
+                                   bug_tagname=bug_tagname+','+bug_tagname1
+                               tagname_cn=tagname_cn1
+           print "#####筛选完毕#################################"                 
+           print levelid,bug_tagname.encode('utf-8'),bug_id
+           print "#####结束#################################"
 
            db.fx_buglevel_update(levelid,bug_tagname,bug_id)
 def project_stat():
@@ -660,14 +641,14 @@ def project_stat():
                 if status ==0:
                     bugcn=td-zt
                     if bugcn >= 1:
-                        obname=db.object_name_sel(obid) 
+			obname=db.object_name_sel(obid) 
                         proname=obname[0]+str(date)
                         db.project_stat_save(proname,obid,date,'0')
             #            print obname[0],bugcn
             #今天无bug         
             else:
                 #项目进行中
-                if status == 1:
+                if status == 1:                    
                     if zt ==0:
                         total=int(db.bug_objectid_sel(obid,stardate,date1)[0])
                         jk_total=int(db.jenkins_source_sel(obid,stardate,date1)[0])
@@ -675,12 +656,12 @@ def project_stat():
                         print "如果项目进行中，今天无bug,更改项目状态为：结束"
                 print obid
                 print td,zt,qt
-def day_changename_comment_stat(date,date1):
+def day_changename_comment_stat(date):
     db=fenxi_mysql.dbmysql()
     ##获取代码注释内容
     com_list=db.change_comment_sel(date)
     ##获取bug信息
-    bugname_list=db.fx_sel_bug(date1)
+    bugname_list=db.fx_sel_bug(date)
     change_name=[]
     object_id=[]
 #    bug_name1=''
@@ -699,17 +680,14 @@ def day_changename_comment_stat(date,date1):
         for j in range(len(com_list)):
              if com_list[j][0] == changename and com_list[j][1] == ob_id:
                  comment=com_list[j][2]
-                 line_num=com_list[j][4]
-                 com_type=com_list[j][5]
                  bug_id_list1=[]
-#                 sim2=0.6
+                 sim2=0.6
                  for x in range(len(bugname_list)):
-                     sim2=0.6
-                     if bugname_list[x][1] == '新建' and bugname_list[x][5] !=None and bugname_list[x][2] == com_list[j][3]:
+                     if bugname_list[x][1] == '新建' and bugname_list[x][5] !=None:
                          if bugname_list[x][6] !='4' and '前端' not in bugname_list[x][5]:
 #                            if '接口' in bugname_list[x][5]:
 #                                sim2=0.8
-                            bug_name=bugname_list[x][4].replace(" ","").replace("/","").replace(",","").replace(")","").replace("(","").replace(":","")
+                            bug_name=bugname_list[x][4].replace(" ","").replace("/","").replace(",","").replace(")","").replace("(","")
                             bug_id=bugname_list[x][0].replace(" ","")
                             cm_cn=int(len(comment))
                             bn_cn=int(len(bug_name))
@@ -718,17 +696,13 @@ def day_changename_comment_stat(date,date1):
                             print cm_cn,bn_cn,tol_cn
                             if tol_cn <=0:
                                 sim2=1
-                            if tol_cn > 0 and tol_cn <=cm_cn:
+                            if tol_cn >=1 and tol_cn <=cm_cn:
                                 sim2=0.8
                             if tol_cn > cm_cn and tol_cn <=cm_cn * 2:
                                 sim2=0.6
-                            if tol_cn > cm_cn * 2 and tol_cn <=cm_cn * 3:
-                                sim2=0.5 
-                            if tol_cn > cm_cn * 3 and tol_cn <=cm_cn * 4:
-                                sim2=0.45 
-                            if tol_cn > cm_cn * 4 and tol_cn <=cm_cn * 5:
-                                sim2=0.35 
-                            print sim2,cm_cn,tol_cn,bug_id,bug_name
+                            if tol_cn > cm_cn * 2 and tol_cn <=cm_cn * 4:
+                                sim2=0.4 
+                            print sim2,cm_cn,tol_cn,bug_id,bug_name,comment
                             print "#######################################"
 #                            print comment,len(comment)
 #                            print bug_name,len(bug_name)
@@ -737,28 +711,23 @@ def day_changename_comment_stat(date,date1):
                             if sim1 > sim2:
                                sim2 =sim1
                                bug_id_list1.append(bug_id)
-                 if len(bug_id_list1) > 0:
-                     bug_id_list=str(bug_id_list1).replace("[","").replace("]","").replace("'","").replace("u","")
-                     print changename,ob_id,comment,bug_id_list
-                     db.changename_bugid_save(changename,ob_id,comment,bug_id_list,date,line_num,com_type)
+                 bug_id_list=str(bug_id_list1).replace("[","").replace("]","").replace("'","").replace("u","")
+#                 print changename,ob_id,commnet,bug_id_list
+                 db.changename_bugid_save(changename,ob_id,comment,bug_id_list,date)
               
 if __name__ == '__main__':
    starttime=datetime.datetime.now()
    date = datetime.date.today()
-   date1 = str(datetime.date.today()+datetime.timedelta(days=-1))
-
    date = str(date)
-   
-   print date,date1
     #print date
-   date1='2018-08-01'
-   print "--day_bug_level----开始时间--------------",starttime,"---------------------------------"
+   date='2018-01-27'
+#   print "--day_bug_level----开始时间--------------",starttime,"---------------------------------"
 #   date1=(datetime.datetime.now()+datetime.timedelta(days=-30)).strftime("%Y-%m-%d")
-   day_bug_level(date1)
+#   day_bug_level(date1)
 #   print "--project_stat----开始时间--------------",starttime,"---------------------------------"
 #   project_stat()
-#   print "--day_changename_comment_stat----开始时间--------------",starttime,"---------------------------------"
-#   day_changename_comment_stat(date,date1)
+   print "--day_changename_comment_stat----开始时间--------------",starttime,"---------------------------------"
+   day_changename_comment_stat(date)
 #   print "---day_commitcode---开始时间--------------",starttime,"---------------------------------"
 #   day_commitcode(date)
 #   starttime1=datetime.datetime.now()

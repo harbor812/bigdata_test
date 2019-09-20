@@ -53,9 +53,9 @@ def get_message():
 
         html=[]
         #大数据
-        html.append("http://180.166.104.154:18080/tfs/DefaultCollection/baa53168-8d92-4fa2-aada-020a50f4244c/2ca57eaf-de46-41d8-a039-dc771c14373f/_api/_backlog/GetBoard?__v=5&hubCategoryReferenceName=Microsoft.RequirementCategory")
+#        html.append("http://180.166.104.154:18080/tfs/DefaultCollection/baa53168-8d92-4fa2-aada-020a50f4244c/2ca57eaf-de46-41d8-a039-dc771c14373f/_api/_backlog/GetBoard?__v=5&hubCategoryReferenceName=Microsoft.RequirementCategory")
         #泡面番
-        html.append("http://180.166.104.154:18080/tfs/DefaultCollection/baa53168-8d92-4fa2-aada-020a50f4244c/c43eae63-58c2-494d-9640-f52d5ebdaf69/_api/_backlog/GetBoard?__v=5&hubCategoryReferenceName=Microsoft.RequirementCategory")
+#        html.append("http://180.166.104.154:18080/tfs/DefaultCollection/baa53168-8d92-4fa2-aada-020a50f4244c/c43eae63-58c2-494d-9640-f52d5ebdaf69/_api/_backlog/GetBoard?__v=5&hubCategoryReferenceName=Microsoft.RequirementCategory")
         #区块链
         html.append("http://180.166.104.154:18080/tfs/DefaultCollection/baa53168-8d92-4fa2-aada-020a50f4244c/3d4f1612-335f-4985-9d16-1f212d66a385/_api/_backlog/GetBoard?__v=5&hubCategoryReferenceName=Microsoft.RequirementCategory")
         htcn=len(html)
@@ -109,8 +109,9 @@ def to_mysql(dict1):
                    obj6=str(objectid3[6])
                    obj34=objectid3[4].encode("utf-8")
                    sub_type=basic_data.basic_project(obj34)
-    #               print ob38[1]
-    #               print sub_type
+#                   print objectid3[0],obj34,sub_type
+#    #               print ob38[1]
+#    #               print sub_type
                    if obj7 !='None': ##获取完成时间并且把时间戳格式化成date
                       token=str(re.findall(r'\d+\.?\d',obj7,re.S)) 
                       timestamp=int(token[2:12])
@@ -135,8 +136,8 @@ def to_mysql(dict1):
                        bugname=bugname2[0]
                    elif "）" in obj34:
                        bugname1=obj34.split("）")
-    #                   title1=bugname1[0].split("(")
-    #                   title=title1[0]
+                       title1=bugname1[0].split("（")
+                       title=title1[0]
                        bugname2=bugname1[1].split("(")
                        bugname=bugname2[0]
                    elif "】" in obj34:
@@ -148,22 +149,16 @@ def to_mysql(dict1):
                    else:
                        bugname=obj34
     #               print "#############################"
-    #               print obj34
-    #               print "#############################"
-    #               print bugname
-    #               print objectid3[0],bugname,objectid3[1],dt,c_user],ob38[1],sub_type,is_miss
+#                   print title,bugname1[0],title1[1]
+#    #               print "#############################"
+#    #               print bugname
+#    #               print objectid3[0],bugname,objectid3[1],dt,c_user],ob38[1],sub_type,is_miss
                    cn=db.bug_sel(objectid3[0],objectid3[1])
     #               print cn
                    cn=int(cn[0])
                    if cn == 0:
-    #                   print objectid3[0],objectid3[4],objectid3[1],dt,c_user,ob38[1],sub_type,is_miss
-    #                   tt=title[0]
-    #                    print type(bugname2)
-    #                    print obj34,bugname
-    #                    print title
-                        print objectid3[0],bugname,objectid3[1],dt,c_user,ob38[1],sub_type,is_miss,title
-    #                    sub_type=basic_data.basic_project(title)
-    #                    db.bug_save(objectid3[0],bugname,objectid3[1],dt,c_user,ob38[1],sub_type,is_miss,title)
+                        sub_type=basic_data.basic_project(title)
+                        db.bug_save(objectid3[0],bugname,objectid3[1],dt,c_user,ob38[1],sub_type,is_miss,title)
 
     except UnboundLocalError,e:
             print e        
@@ -256,9 +251,9 @@ if __name__ == '__main__':
         date=(datetime.datetime.now()+datetime.timedelta(days=-1)).strftime("%Y-%m-%d %H:%M:%S")
         print date
     #    print date
-        date='2018-06-27 01:06:37'
-    #    get_message()
-        zentao_get_message(date)
+        date='2019-03-25 01:06:37'
+        get_message()
+#        zentao_get_message(date)
     #    day_bug_level(date)
 
         

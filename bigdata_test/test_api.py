@@ -9,6 +9,8 @@ Created on Sun Sep 17 15:29:07 2017
 #from db_mysql import save
 import MySQLdb as mdb
 
+import http.client
+
 def save(objectname,date,change,name,commitcode):
 #    print objectname
 #    print date
@@ -49,5 +51,22 @@ for j in range(i):
 #        print name[t]
         save(objectid,date[0],change1,name[t],commitcode[0])
         t=t+1
+
+# 发送post请求 获取json数据
+def httpConnection_Post_Json(url,url_path,data_dict):
+    try:
+        conn = http.client.HTTPConnection(url,timeout=15)
+        headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "application/json"}
+        payload = urllib.parse.urlencode(data_dict)
+        url_path = 'http://' + url + url_path
+        conn.request("POST", url_path, payload, headers)
+        res = conn.getresponse()
+        data = res.read()
+        ret = data.decode("utf-8")
+        return ret
+    except Exception as e:
+        payload = urllib.parse.urlencode(data_dict)
+        log.e('httpConnection_Post:'+url+url_path+payload)
+        return None
         
 

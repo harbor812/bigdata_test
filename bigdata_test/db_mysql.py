@@ -343,7 +343,15 @@ class dbmysql(object):
         conn.commit()
         cursor.close()
         conn.close()
-
+    def change_funciotn_sel(self,startdate):
+        conn = mdb.connect(self.localhost,self.user,self.passwd,self.databases,charset="utf8")
+        cursor=conn.cursor()          #定义连接对象
+        sql = "select object_id,change_name,del_comment,add_comment from changename_funciton where del_comment !='0' or add_comment !='0' and date >= '"+startdate+"'"
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        return results
+        cursor.close()
+        conn.close()
 #res=dbmysql().bug_sel_subtype("2017-09-13")
 #if res != ():
 #    print res[2]

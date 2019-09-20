@@ -1,1 +1,4 @@
-Tue, 07 Aug 2018 15:20:54 pop_redis.py[line:104] INFO 2018-08-07 15:20:54,近90天bug严重的程序-子项目名称：泡面番前端-程序名：file:/application/controllers/api/Host.php- 有更新,<a href=changename_analyze/file:/application/controllers/api/Host.php target="_blank">查看数据分析详细信息</a>
+Thu, 22 Aug 2019 19:33:58 base.py[line:83] INFO GET http://113.107.166.14:19200/xiaohulu-liveshow-2019-08-22/message/_search [status:200 request:5.126s]
+Thu, 22 Aug 2019 19:40:14 base.py[line:83] INFO GET http://113.107.166.14:19200/xiaohulu-liveshow-2019-08-22/message/_search [status:200 request:0.354s]
+Fri, 23 Aug 2019 11:41:06 base.py[line:83] INFO GET http://113.107.166.14:19200/xiaohulu-liveshow-2019-07-16/message/_search [status:200 request:0.452s]
+Fri, 23 Aug 2019 11:47:18 base.py[line:83] INFO GET http://113.107.166.14:19200/xiaohulu-liveshow-2019-07-16/message/_search [status:200 request:0.197s]

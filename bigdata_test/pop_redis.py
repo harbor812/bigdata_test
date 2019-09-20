@@ -32,7 +32,7 @@ logging.getLogger('').addHandler(console)
 
 def pop_redis(ip,port,key):
     task=""
-    pool = redis.ConnectionPool(host=ip, port=port, db=0)    
+    pool = redis.ConnectionPool(host=ip, port=port, db=1)    
     r=redis.Redis(connection_pool=pool)
     try:
     #r.hset("test1", "k1", "v1")
@@ -48,7 +48,7 @@ def pop_redis(ip,port,key):
         while True:
             task = r.blpop(key)
 #            print task
-            dict1 = json.loads(task[1],strict=False)
+            dict1 = json.loads(task[1],strict=False) # print json.dumps(js, ensure_ascii=False)   {"haha": "哈哈"}
     #            print dict1
             dic=list(dict1.keys())
          #           logging.info(dic) 

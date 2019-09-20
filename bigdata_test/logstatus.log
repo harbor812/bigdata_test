@@ -1,0 +1,3447 @@
+smart_open library not found; falling back to local-filesystem-only
+>> Synonyms load wordseg dict [C:\Users\Brianzhu\AppData\Roaming\Python\Python27\site-packages\synonyms\data\vocab.txt] ... 
+>> Synonyms on loading stopwords [C:\Users\Brianzhu\AppData\Roaming\Python\Python27\site-packages\synonyms\data\stopwords.txt] ...
+>> Synonyms on loading vectors [C:\Users\Brianzhu\AppData\Roaming\Python\Python27\site-packages\synonyms\data\words.vector] ...
+2019-04-19 2019-04-18
+--day_bug_level----开始时间-------------- 2019-04-19 13:59:27.672000 ---------------------------------
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8571            1            闪退            0          手机
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8569            1            崩溃            0        系统崩溃
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8551            2            报错            0        接口问题
+1     8552            2            报错            0        接口问题
+2     8556            2            报错            0        接口问题
+3     8561            2            报错            0        接口问题
+4     8610            2            报错            0        接口问题
+   fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      8606            3            接口            0        兼容问题
+1      8548            3            接口            0        兼容问题
+2      8551            3            接口            0        兼容问题
+3      8552            3            接口            0        兼容问题
+4      8554            3            接口            0        兼容问题
+5      8555            3            接口            0        兼容问题
+6      8556            3            接口            0        兼容问题
+7      8557            3            接口            0        兼容问题
+8      8561            3            接口            0        兼容问题
+9      8572            3            接口            0        兼容问题
+10     8588            3            接口            0        兼容问题
+11     8590            3            接口            0        兼容问题
+12     8596            3            接口            0        兼容问题
+13     8597            3            接口            0        兼容问题
+14     8599            3            接口            0        兼容问题
+15     8609            3            接口            0        兼容问题
+16     8610            3            接口            0        兼容问题
+17     8612            3            接口            0        兼容问题
+18     8617            3            接口            0        兼容问题
+19     8623            3            接口            0        兼容问题
+20     8624            3            接口            0        兼容问题
+21      456            3            接口            0        兼容问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8606            2            数据            2        数据问题
+1     8556            2            数据            2        数据问题
+2     8619            2            数据            2        数据问题
+3     8624            2            数据            2        数据问题
+4     8626            2            数据            2        数据问题
+5      403            2            数据            2        数据问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      355            2            异常            0        接口问题
+1      404            2            异常            0        接口问题
+2      405            2            异常            0        接口问题
+3      405            2            异常            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+   fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      7058            3            失败            0      功能实现问题
+1      8605            3            失败            0      功能实现问题
+2      8567            3            失败            0      功能实现问题
+3      8570            3            失败            0      功能实现问题
+4      8599            3            失败            0      功能实现问题
+5      8603            3            失败            0      功能实现问题
+6      8612            3            失败            0      功能实现问题
+7      8617            3            失败            0      功能实现问题
+8      8620            3            失败            0      功能实现问题
+9       403            3            失败            0      功能实现问题
+10      432            3            失败            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8614            3            兼容            0        兼容问题
+   fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      8606            3            错误            0      功能实现问题
+1      8547            3            错误            0      功能实现问题
+2      8553            3            错误            0      功能实现问题
+3      8555            3            错误            0      功能实现问题
+4      8560            3            错误            0      功能实现问题
+5      8567            3            错误            0      功能实现问题
+6      8572            3            错误            0      功能实现问题
+7      8575            3            错误            0      功能实现问题
+8      8579            3            错误            0      功能实现问题
+9      8588            3            错误            0      功能实现问题
+10     8590            3            错误            0      功能实现问题
+11     8596            3            错误            0      功能实现问题
+12     8601            3            错误            0      功能实现问题
+13     8603            3            错误            0      功能实现问题
+14     8617            3            错误            0      功能实现问题
+15     8620            3            错误            0      功能实现问题
+16     8622            3            错误            0      功能实现问题
+17     8624            3            错误            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8607            3            无法            0      功能实现问题
+1     8549            3            无法            0      功能实现问题
+2     8564            3            无法            0      功能实现问题
+3     8621            3            无法            0      功能实现问题
+4      355            3            无法            0      功能实现问题
+5      432            3            无法            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8619            3            重复            0        前端问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7103            3            同步            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      367            2            重叠            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     6993            2            花屏            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      434            3            优化            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+   fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      8550            3            显示            0      功能实现问题
+1      8557            3            显示            0      功能实现问题
+2      8560            3            显示            0      功能实现问题
+3      8574            3            显示            0      功能实现问题
+4      8579            3            显示            0      功能实现问题
+5      8601            3            显示            0      功能实现问题
+6      8622            3            显示            0      功能实现问题
+7       367            3            显示            0      功能实现问题
+8       386            3            显示            0      功能实现问题
+9       403            3            显示            0      功能实现问题
+10      404            3            显示            0      功能实现问题
+11      447            3            显示            0      功能实现问题
+12      386            3            显示            0      功能实现问题
+13      447            3            显示            0      功能实现问题
+14      451            3            显示            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8566            3           未弹出            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      448            3            判断            0        前端问题
+1      453            3            判断            0        前端问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      453            3           不需要            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8561            3            更新            0      功能实现问题
+1      415            3            更新            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8605            3            验证            0      功能实现问题
+1     8603            3            验证            0      功能实现问题
+2     8611            3            验证            0      功能实现问题
+3     8612            3            验证            0      功能实现问题
+4      456            3            验证            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8605            2            跳转            0        数据问题
+1     8608            2            跳转            0        数据问题
+2      436            2            跳转            0        数据问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8576            2            多次            0        数据问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8558            2            失效            0      功能实现问题
+1     8559            2            失效            0      功能实现问题
+2     8568            2            失效            0      功能实现问题
+3      413            2            失效            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8565            2            绑定            0        数据问题
+1     8566            2            绑定            0        数据问题
+2     8597            2            绑定            0        数据问题
+3     8604            2            绑定            0        数据问题
+4     8626            2            绑定            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8567            3            提示            0        前端问题
+1     8604            3            提示            0        前端问题
+2     8611            3            提示            0        前端问题
+3     8613            3            提示            0        前端问题
+4      359            3            提示            0        前端问题
+5      434            3            提示            0        前端问题
+6      436            3            提示            0        前端问题
+7      437            3            提示            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8569            3            点击            0      功能实现问题
+1     8602            3            点击            0      功能实现问题
+2     8611            3            点击            0      功能实现问题
+3     8613            3            点击            0      功能实现问题
+4      359            3            点击            0      功能实现问题
+5      406            3            点击            0      功能实现问题
+6      406            3            点击            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8623            2            推送            0        接口问题
+1      386            2            推送            0        接口问题
+2      386            2            推送            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8550            3            添加            0      功能实现问题
+   fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      8607            3            主播            0      功能实现问题
+1      8566            3            主播            0      功能实现问题
+2      8568            3            主播            0      功能实现问题
+3      8569            3            主播            0      功能实现问题
+4      8571            3            主播            0      功能实现问题
+5      8577            3            主播            0      功能实现问题
+6      8578            3            主播            0      功能实现问题
+7      8590            3            主播            0      功能实现问题
+8      8596            3            主播            0      功能实现问题
+9      8597            3            主播            0      功能实现问题
+10     8602            3            主播            0      功能实现问题
+11     8613            3            主播            0      功能实现问题
+12     8617            3            主播            0      功能实现问题
+13     8621            3            主播            0      功能实现问题
+14     8624            3            主播            0      功能实现问题
+15     8626            3            主播            0      功能实现问题
+16      359            3            主播            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8548            2            返回            0        接口问题
+1     8549            2            返回            0        接口问题
+2     8553            2            返回            0        接口问题
+3     8598            2            返回            0        接口问题
+4     8599            2            返回            0        接口问题
+5     8603            2            返回            0        接口问题
+6     8609            2            返回            0        接口问题
+7     8627            2            返回            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8574            3            没有            0      功能实现问题
+1     8597            3            没有            0      功能实现问题
+2      448            3            没有            0      功能实现问题
+3      450            3            没有            0      功能实现问题
+4      453            3            没有            0      功能实现问题
+5      455            3            没有            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8548            3             与            0      功能实现问题
+1     8560            3             与            0      功能实现问题
+2      367            3             与            0      功能实现问题
+3      415            3             与            0      功能实现问题
+4      447            3             与            0      功能实现问题
+5      447            3             与            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     6993            3            视频            0      功能实现问题
+1     7103            3            视频            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8596            2            查询            0        接口问题
+1     8597            2            查询            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      405            3            工具            0      功能实现问题
+1      406            3            工具            0      功能实现问题
+2      413            3            工具            0      功能实现问题
+3      405            3            工具            0      功能实现问题
+4      406            3            工具            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8588            2            统计            0        数据问题
+1      450            2            统计            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8627            3            新增            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      415            3            实时            0        数据问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      448            3            录制            0      功能实现问题
+1      453            3            录制            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      367            2            出现            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+   fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      8606            3             表            0      功能实现问题
+1      8563            3             表            0      功能实现问题
+2      8596            3             表            0      功能实现问题
+3      8597            3             表            0      功能实现问题
+4      8618            3             表            0      功能实现问题
+5      8620            3             表            0      功能实现问题
+6      8623            3             表            0      功能实现问题
+7       357            3             表            0      功能实现问题
+8       359            3             表            0      功能实现问题
+9       397            3             表            0      功能实现问题
+10      406            3             表            0      功能实现问题
+11      406            3             表            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8606            2             数            0        数据问题
+1     8549            2             数            0        数据问题
+2     8556            2             数            0        数据问题
+3     8590            2             数            0        数据问题
+4     8601            2             数            0        数据问题
+5     8619            2             数            0        数据问题
+6     8624            2             数            0        数据问题
+7     8626            2             数            0        数据问题
+8      403            2             数            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8611            3            获取            0      功能实现问题
+1     8620            3            获取            0      功能实现问题
+2     8624            3            获取            0      功能实现问题
+3      455            3            获取            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      359            3            直播            0      功能实现问题
+1      367            3            直播            0      功能实现问题
+2      403            3            直播            0      功能实现问题
+3      432            3            直播            0      功能实现问题
+4      434            3            直播            0      功能实现问题
+5      436            3            直播            0      功能实现问题
+6      437            3            直播            0      功能实现问题
+7      455            3            直播            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8606            2            基础            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7104            3            房间            0      功能实现问题
+1      455            3            房间            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      447            3            观众            0      功能实现问题
+1      447            3            观众            0      功能实现问题
+2      451            3            观众            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8563            3            列表            0      功能实现问题
+1     8618            3            列表            0      功能实现问题
+2     8620            3            列表            0      功能实现问题
+3     8623            3            列表            0      功能实现问题
+4      357            3            列表            0      功能实现问题
+5      359            3            列表            0      功能实现问题
+6      397            3            列表            0      功能实现问题
+7      406            3            列表            0      功能实现问题
+8      406            3            列表            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      405            3            播放            0        前端问题
+1      415            3            播放            0        前端问题
+2      432            3            播放            0        前端问题
+3      405            3            播放            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+   fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      6993            3             后            0      功能实现问题
+1      8608            3             后            0      功能实现问题
+2      8549            3             后            0      功能实现问题
+3      8576            3             后            0      功能实现问题
+4      8599            3             后            0      功能实现问题
+5      8603            3             后            0      功能实现问题
+6      8611            3             后            0      功能实现问题
+7       413            3             后            0      功能实现问题
+8       447            3             后            0      功能实现问题
+9       447            3             后            0      功能实现问题
+10      451            3             后            0      功能实现问题
+11      454            3             后            0      功能实现问题
+12      455            3             后            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8560            3             为            0      功能实现问题
+1     8577            3             为            0      功能实现问题
+2     8600            3             为            0      功能实现问题
+3     8609            3             为            0      功能实现问题
+4     8613            3             为            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      359            3            公会            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      437            3            分类            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      359            2            系统            0        数据问题
+1      452            2            系统            0        数据问题
+2      453            2            系统            0        数据问题
+3      454            2            系统            0        数据问题
+   fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0       386            3            广告            0      功能实现问题
+1       397            3            广告            0      功能实现问题
+2       405            3            广告            0      功能实现问题
+3       406            3            广告            0      功能实现问题
+4       413            3            广告            0      功能实现问题
+5       415            3            广告            0      功能实现问题
+6       432            3            广告            0      功能实现问题
+7       448            3            广告            0      功能实现问题
+8       386            3            广告            0      功能实现问题
+9       405            3            广告            0      功能实现问题
+10      406            3            广告            0      功能实现问题
+11      453            3            广告            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8567            3            时间            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8621            2            结果            0        数据问题
+1      450            2            结果            0        数据问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      356            3            弹幕            0        前端问题
+1      447            3            弹幕            0        前端问题
+2      449            3            弹幕            0        前端问题
+3      447            3            弹幕            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      434            3           直播间            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      450            3            上传            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8612            2             调            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8579            3           详情页            1      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      454            3             到            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8598            3           API            0       APP问题
+1     8603            3           API            0       APP问题
+2     8609            3           API            0       APP问题
+3     8610            3           API            0       APP问题
+4      456            3           API            0       APP问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8614            3            问题            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8548            3            字段            0      功能实现问题
+1     8556            3            字段            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8548            2            段值            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8547            2          info            0        接口问题
+1     8548            2          info            0        接口问题
+2     8596            2          info            0        接口问题
+3     8609            2          info            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8550            3            状态            0      功能实现问题
+1     8563            3            状态            0      功能实现问题
+2     8622            3            状态            0      功能实现问题
+3      356            3            状态            0      功能实现问题
+4      415            3            状态            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7104            2         spark            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8573            3            图片            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8626            2          null            2        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8558            3             按            0        前端问题
+1     8559            3             按            0        前端问题
+2     8565            3             按            0        前端问题
+3     8568            3             按            0        前端问题
+4     8602            3             按            0        前端问题
+5     8627            3             按            0        前端问题
+6      359            3             按            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8549            3            删除            0        前端问题
+1      359            3            删除            0        前端问题
+2      447            3            删除            0        前端问题
+3      447            3            删除            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8620            2            to            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8562            3            记录            0        数据问题
+1     8627            3            记录            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      456            2          list            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8578            3            加载            0      功能实现问题
+1     8619            3            加载            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8623            3            表中            0        前端问题
+1      357            3            表中            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      434            2            逻辑            0      功能实现问题
+1      448            2            逻辑            0      功能实现问题
+2      453            2            逻辑            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8603            3           验证码            0      功能实现问题
+1     8611            3           验证码            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8565            3            关闭            0      功能实现问题
+1      447            3            关闭            0      功能实现问题
+2      447            3            关闭            0      功能实现问题
+3      452            3            关闭            0      功能实现问题
+4      454            3            关闭            0      功能实现问题
+5      455            3            关闭            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8627            2            自动            0        数据问题
+1      455            2            自动            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8608            3            提交            0        前端问题
+1     8559            3            提交            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      453            3             再            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      449            3            名称            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      434            3            填写            0      功能实现问题
+1      436            3            填写            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8606            3             日            0      功能实现问题
+1     8623            3             日            0      功能实现问题
+2      403            3             日            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8574            3             有            0      功能实现问题
+1     8597            3             有            0      功能实现问题
+2      386            3             有            0      功能实现问题
+3      406            3             有            0      功能实现问题
+4      448            3             有            0      功能实现问题
+5      386            3             有            0      功能实现问题
+6      406            3             有            0      功能实现问题
+7      450            3             有            0      功能实现问题
+8      453            3             有            0      功能实现问题
+9      455            3             有            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      432            2            管家            0        数据问题
+   fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      8564            3             小            0      功能实现问题
+1      8612            3             小            0      功能实现问题
+2      8626            3             小            0      功能实现问题
+3       405            3             小            0      功能实现问题
+4       406            3             小            0      功能实现问题
+5       413            3             小            0      功能实现问题
+6       432            3             小            0      功能实现问题
+7       405            3             小            0      功能实现问题
+8       406            3             小            0      功能实现问题
+9       453            3             小            0      功能实现问题
+10      454            3             小            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      386            3            任务            0        接口问题
+1      397            3            任务            0        接口问题
+2      406            3            任务            0        接口问题
+3      449            3            任务            0        接口问题
+4      386            3            任务            0        接口问题
+5      406            3            任务            0        接口问题
+6      453            3            任务            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8549            2             取            0        数据问题
+1     8590            2             取            0        数据问题
+2     8611            2             取            0        数据问题
+3     8620            2             取            0        数据问题
+4     8624            2             取            0        数据问题
+5      455            2             取            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8590            3             月            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8558            3            按钮            0        前端问题
+1     8559            3            按钮            0        前端问题
+2     8565            3            按钮            0        前端问题
+3     8568            3            按钮            0        前端问题
+4     8602            3            按钮            0        前端问题
+5     8627            3            按钮            0        前端问题
+6      359            3            按钮            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      356            3            助手            0      功能实现问题
+1      434            3            助手            0      功能实现问题
+2      435            3            助手            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8579            2         title            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8627            3            一个            0      功能实现问题
+1      357            3            一个            0      功能实现问题
+2      435            3            一个            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8548            3             段            0      功能实现问题
+1     8556            3             段            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8554            3            多选            0      功能实现问题
+1     8555            3            多选            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8550            2            开始            0        数据问题
+1     8569            2            开始            0        数据问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8562            3             及            0      功能实现问题
+1     8563            3             及            0      功能实现问题
+2     8598            3             及            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7104            3             单            0      功能实现问题
+1     8554            3             单            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      455            2            保存            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8605            3             转            0      功能实现问题
+1     8608            3             转            0      功能实现问题
+2      436            3             转            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8623            2            日期            0        数据问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8547            2            in            0        数据问题
+1     8548            2            in            0        数据问题
+2     8562            2            in            0        数据问题
+3     8572            2            in            0        数据问题
+4     8596            2            in            0        数据问题
+5     8598            2            in            0        数据问题
+6     8603            2            in            0        数据问题
+7     8609            2            in            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      448            3            完成            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8548            2        status            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8548            3             上            0      功能实现问题
+1     8588            3             上            0      功能实现问题
+2     8590            3             上            0      功能实现问题
+3     8597            3             上            0      功能实现问题
+4      359            3             上            0      功能实现问题
+5      447            3             上            0      功能实现问题
+6      447            3             上            0      功能实现问题
+7      450            3             上            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      434            3            地址            0      功能实现问题
+1      455            3            地址            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8621            2            结束            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8562            2            增加            0        接口问题
+1      435            2            增加            0        接口问题
+2      437            2            增加            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8601            2            检测            0        数据问题
+1      432            2            检测            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8556            2            缺少            0        数据问题
+1     8565            2            缺少            0        数据问题
+2      397            2            缺少            0        数据问题
+3      436            2            缺少            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      386            3            界面            0        前端问题
+1      404            3            界面            0        前端问题
+2      405            3            界面            0        前端问题
+3      434            3            界面            0        前端问题
+4      386            3            界面            0        前端问题
+5      405            3            界面            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7104            3             名            0      功能实现问题
+1     8573            3             名            0      功能实现问题
+2      449            3             名            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7000            2            at            0        数据问题
+1     8548            2            at            0        数据问题
+2     8603            2            at            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7103            3             不            0      功能实现问题
+1     8548            3             不            0      功能实现问题
+2     8596            3             不            0      功能实现问题
+3     8612            3             不            0      功能实现问题
+4     8613            3             不            0      功能实现问题
+5     8618            3             不            0      功能实现问题
+6      357            3             不            0      功能实现问题
+7      453            3             不            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8607            3             我            0      功能实现问题
+1     8566            3             我            0      功能实现问题
+2     8568            3             我            0      功能实现问题
+3     8569            3             我            0      功能实现问题
+4     8577            3             我            0      功能实现问题
+5     8602            3             我            0      功能实现问题
+6     8613            3             我            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8557            3            用户            0      功能实现问题
+1     8574            3            用户            0      功能实现问题
+2     8599            3            用户            0      功能实现问题
+3      359            3            用户            0      功能实现问题
+4      437            3            用户            0      功能实现问题
+5      453            3            用户            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8614            2            链接            0        数据问题
+1      437            2            链接            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+   fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      8607            3             页            0      功能实现问题
+1      8608            3             页            0      功能实现问题
+2      8568            3             页            0      功能实现问题
+3      8571            3             页            0      功能实现问题
+4      8578            3             页            0      功能实现问题
+5      8579            3             页            0      功能实现问题
+6      8590            3             页            0      功能实现问题
+7      8599            3             页            0      功能实现问题
+8      8600            3             页            0      功能实现问题
+9      8603            3             页            0      功能实现问题
+10     8619            3             页            0      功能实现问题
+11     8622            3             页            0      功能实现问题
+12     8626            3             页            0      功能实现问题
+13     8627            3             页            0      功能实现问题
+14      359            3             页            0      功能实现问题
+15      367            3             页            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8596            3            表里            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8612            2             并            0        接口问题
+1      406            2             并            0        接口问题
+2      406            2             并            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8548            3            对应            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8548            2             值            0        数据问题
+1     8549            2             值            0        数据问题
+2     8570            2             值            0        数据问题
+3     8588            2             值            0        数据问题
+4     8590            2             值            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      357            3            控制            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8571            2            进入            0        接口问题
+1     8619            2            进入            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7000            2         LEVEL            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8601            3            功能            0        性能问题
+1      451            3            功能            0        性能问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8552            3            详情            0      功能实现问题
+1     8553            3            详情            0      功能实现问题
+2     8555            3            详情            0      功能实现问题
+3     8557            3            详情            0      功能实现问题
+4     8579            3            详情            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8574            3             没            0      功能实现问题
+1     8597            3             没            0      功能实现问题
+2      448            3             没            0      功能实现问题
+3      450            3             没            0      功能实现问题
+4      453            3             没            0      功能实现问题
+5      455            3             没            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8563            3            区分            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8549            2          type            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8601            2            实现            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8565            3             关            0      功能实现问题
+1      447            3             关            0      功能实现问题
+2      447            3             关            0      功能实现问题
+3      452            3             关            0      功能实现问题
+4      454            3             关            0      功能实现问题
+5      455            3             关            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8556            2            修改            0        数据问题
+1     8575            2            修改            0        数据问题
+2      449            2            修改            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8549            2            数值            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8604            3            使用            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7103            3            时长            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      397            3             可            0      功能实现问题
+1      406            3             可            0      功能实现问题
+2      406            3             可            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8614            3            四个            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8624            3            服务            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      357            3            选择            0      功能实现问题
+1      437            3            选择            0      功能实现问题
+2      451            3            选择            0      功能实现问题
+3      454            3            选择            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8556            2           数据库            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8576            3            登录            0      功能实现问题
+1     8599            3            登录            0      功能实现问题
+2     8603            3            登录            0      功能实现问题
+3     8604            3            登录            0      功能实现问题
+4     8612            3            登录            0      功能实现问题
+5     8626            3            登录            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8619            3            重新            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      448            2            退出            0        数据问题
+1      453            2            退出            0        数据问题
+2      454            2            退出            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8603            3             一            0      功能实现问题
+1     8609            3             一            0      功能实现问题
+2     8627            3             一            0      功能实现问题
+3      357            3             一            0      功能实现问题
+4      435            3             一            0      功能实现问题
+5      437            3             一            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8564            2            程序            0      功能实现问题
+1     8612            2            程序            0      功能实现问题
+2     8626            2            程序            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8612            3            切换            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8572            3            路径            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8579            3            内容            0        兼容问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8599            2            登陆            0        登录问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8603            3            一直            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8573            3            排名            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      437            3             做            0      功能实现问题
+1      447            3             做            0      功能实现问题
+2      448            3             做            0      功能实现问题
+3      447            3             做            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8609            3            一会            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8604            2            已经            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8578            3             过            0      功能实现问题
+1     8600            3             过            0      功能实现问题
+2     8604            3             过            0      功能实现问题
+3     8626            3             过            0      功能实现问题
+4      415            3             过            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8566            3             出            0      功能实现问题
+1     8623            3             出            0      功能实现问题
+2      367            3             出            0      功能实现问题
+3      448            3             出            0      功能实现问题
+4      453            3             出            0      功能实现问题
+5      454            3             出            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8613            3            不是            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      367            3            情况            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      447            3            开关            0      功能实现问题
+1      447            3            开关            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8612            3             个            0      功能实现问题
+1     8614            3             个            0      功能实现问题
+2     8627            3             个            0      功能实现问题
+3      356            3             个            0      功能实现问题
+4      357            3             个            0      功能实现问题
+5      435            3             个            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8547            2        hostId            0        接口问题
+1     8570            2        hostId            0        接口问题
+2     8609            2        hostId            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      357            2            成功            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8607            3            页面            0      功能实现问题
+1     8599            3            页面            0      功能实现问题
+2     8600            3            页面            0      功能实现问题
+3     8603            3            页面            0      功能实现问题
+4     8622            3            页面            0      功能实现问题
+5     8626            3            页面            0      功能实现问题
+6     8627            3            页面            0      功能实现问题
+7      359            3            页面            0      功能实现问题
+8      367            3            页面            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      405            3             最            0      功能实现问题
+1      406            3             最            0      功能实现问题
+2      413            3             最            0      功能实现问题
+3      405            3             最            0      功能实现问题
+4      406            3             最            0      功能实现问题
+5      453            3             最            0      功能实现问题
+6      454            3             最            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8621            3            查看            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8598            3             等            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8562            3            脚本            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8607            2             无            0      功能实现问题
+1     8549            2             无            0      功能实现问题
+2     8564            2             无            0      功能实现问题
+3     8599            2             无            0      功能实现问题
+4     8602            2             无            0      功能实现问题
+5     8621            2             无            0      功能实现问题
+6      355            2             无            0      功能实现问题
+7      432            2             无            0      功能实现问题
+8      454            2             无            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8599            2            反应            0        接口问题
+1     8602            2            反应            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      359            3             键            0        前端问题
+1      453            3             键            0        前端问题
+2      454            3             键            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7058            2            生成            0      功能实现问题
+1      356            2            生成            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      455            3            进行            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8598            2         login            0        数据问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      456            2           com            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      397            3            图标            0        前端问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8623            3             送            0      功能实现问题
+1      386            3             送            0      功能实现问题
+2      386            3             送            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8562            2          user            0        数据问题
+1     8597            2          user            0        数据问题
+2     8598            2          user            0        数据问题
+3     8603            2          user            0        数据问题
+4     8610            2          user            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8600            3            认证            0      功能实现问题
+1     8602            3            认证            0      功能实现问题
+2     8613            3            认证            0      功能实现问题
+3     8614            3            认证            0      功能实现问题
+4      404            3            认证            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8547            2           tid            0        代码问题
+1     8570            2           tid            0        代码问题
+2     8609            2           tid            0        代码问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8599            3            输入            0        前端问题
+1     8601            3            输入            0        前端问题
+2     8604            3            输入            0        前端问题
+3     8611            3            输入            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8618            3            表报            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8613            2            更改            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8607            3            打开            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+   fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      8607            2            投票            0        数据问题
+1      8608            2            投票            0        数据问题
+2      8551            2            投票            0        数据问题
+3      8552            2            投票            0        数据问题
+4      8553            2            投票            0        数据问题
+5      8554            2            投票            0        数据问题
+6      8555            2            投票            0        数据问题
+7      8557            2            投票            0        数据问题
+8      8558            2            投票            0        数据问题
+9      8559            2            投票            0        数据问题
+10     8560            2            投票            0        数据问题
+11     8561            2            投票            0        数据问题
+12     8567            2            投票            0        数据问题
+13     8569            2            投票            0        数据问题
+14     8579            2            投票            0        数据问题
+15     8618            2            投票            0        数据问题
+16     8619            2            投票            0        数据问题
+17     8620            2            投票            0        数据问题
+18     8621            2            投票            0        数据问题
+19     8627            2            投票            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8618            2            存在            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8573            3             榜            0      功能实现问题
+1     8574            3             榜            0      功能实现问题
+2     8588            3             榜            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8550            3             加            0      功能实现问题
+1     8562            3             加            0      功能实现问题
+2     8578            3             加            0      功能实现问题
+3     8619            3             加            0      功能实现问题
+4      435            3             加            0      功能实现问题
+5      437            3             加            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8612            2            导致            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8612            3            不会            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8547            2            传参            0        接口问题
+1     8575            2            传参            0        接口问题
+2     8617            2            传参            0        接口问题
+3     8620            2            传参            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7000            2          host            0        接口问题
+1     8547            2          host            0        接口问题
+2     8548            2          host            0        接口问题
+3     8570            2          host            0        接口问题
+4     8572            2          host            0        接口问题
+5     8596            2          host            0        接口问题
+6     8597            2          host            0        接口问题
+7     8609            2          host            0        接口问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      454            3            发现            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8547            2      hostInfo            0        接口问题
+1     8548            2      hostInfo            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8626            2            直接            0        数据问题
+1     8627            2            直接            0        数据问题
+2      453            2            直接            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8624            2            偏好            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7000            2          data            0        数据问题
+1     8603            2          data            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8579            3             内            0      功能实现问题
+1      432            3             内            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      454            3            然后            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8623            3            超出            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8609            2            统一            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8604            3            应该            0      功能实现问题
+1      456            3            应该            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8614            3            复制            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8627            3            发起            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      456            2          post            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      435            3            设置            0        前端问题
+1      449            3            设置            0        前端问题
+2      452            3            设置            0        前端问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8601            2            数字            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8562            2          coin            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7104            3             机            0      功能实现问题
+1     8599            3             机            0      功能实现问题
+2     8604            3             机            0      功能实现问题
+3     8611            3             机            0      功能实现问题
+4     8626            3             机            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8600            3           错别字            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      355            3            操作            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     7104            3            机器            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      451            2            生效            0      功能实现问题
+1      452            2            生效            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      367            3            窗口            0      功能实现问题
+1      449            3            窗口            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8549            4            红包            0        前端问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8613            2            账号            0        登录问题
+1     8626            2            账号            0        登录问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8549            2            领取            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8604            3             该            0        前端问题
+1     8613            3             该            0        前端问题
+2      456            3             该            0        前端问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8601            3            确认            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8560            3            参与            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8611            3            正确            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8565            3             框            0        前端问题
+1     8566            3             框            0        前端问题
+2     8576            3             框            0        前端问题
+3      386            3             框            0        前端问题
+4      386            3             框            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      367            3            概率            0      功能实现问题
+1      403            3            概率            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8565            2            微信            0        登录问题
+1     8566            2            微信            0        登录问题
+2     8604            2            微信            0        登录问题
+3     8626            2            微信            0        登录问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8603            2            ad            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      415            3            网络            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8596            2         event            0        接口问题
+1     8597            2         event            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8562            2             矿            0        数据问题
+1     8576            2             矿            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      456            2       comment            0        数据问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      453            3            还是            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8550            3             被            0      功能实现问题
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      359            3            键盘            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8599            3           手机号            0       APP问题
+1     8604            3           手机号            0       APP问题
+2     8611            3           手机号            0       APP问题
+3     8626            3           手机号            0       APP问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8588            3            线上            0      功能实现问题
+1     8590            3            线上            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      456            2   commentlist            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0      413            3            激活            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     6993            3             打            0      功能实现问题
+1     7058            3             打            0      功能实现问题
+2     8607            3             打            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8559            3            创建            0      功能实现问题
+1     8567            3            创建            0      功能实现问题
+2     8570            3            创建            0      功能实现问题
+3      356            3            创建            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8620            2         token            0        接口问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8563            3            主题            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8566            3            需要            0      功能实现问题
+1     8609            3            需要            0      功能实现问题
+2      437            3            需要            0      功能实现问题
+3      449            3            需要            0      功能实现问题
+4      453            3            需要            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8566            3            弹出            0        前端问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+  fx_bugid  fx_level_id fx_level_word  fx_priority fx_tag_name
+0     8603            3            授权            0      功能实现问题
+Empty DataFrame
+Columns: [fx_bugid, fx_level_id, fx_level_word, fx_priority, fx_tag_name]
+Index: []
+------结束时间------------- 2019-04-19 13:59:42.458000 ------------------------------------
+------运行耗时------------- 14 ----------------------------------------

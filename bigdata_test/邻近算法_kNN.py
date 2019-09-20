@@ -35,7 +35,7 @@ def kNN(learning_dataset,dataPoint,k):
     for key,v in learning_dataset.items():
        d=np.linalg.norm(np.array(v[:3])-np.array(dataPoint))
        disList.append([key,round(d,2)])
-
+       print v[:3]
     # s2:按照距离大小进行递增排序
     disList.sort(key=lambda dis: dis[1]) 
 
